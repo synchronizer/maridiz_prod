@@ -1,62 +1,190 @@
-[[Page title="Тест">
-    [[Overlay id="buttons">
-        ["[[Card>[[Button dom-id='BTN'>0[[/Button>[[/Card>", "[[Card>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eos necessitatibus consequatur mollitia. Odit at vitae asperiores blanditiis eligendi aut et similique repellat? Praesentium cumque, sunt voluptatum possimus nulla, qui vitae magni recusandae deserunt tenetur ab consectetur eaque. Consectetur voluptates vero, veritatis quo aspernatur earum sit exercitationem? Inventore, molestias iusto?[[/Card>", "[[Card>[[Button dom-id='BTN'>2[[/Button>[[/Card>"]
-    [[/Overlay>
-    [[Header>[[/Header>
-    [[Main> 
 
-        [[Button overlay="buttons" overlay-item="2">Overlay[[/Button>
-        [[Gap>[[/Gap>
-        [[Wide>
-            [[Slider time=6 pause=12 titles='["Регистрация%20под%20ключ",%20"Проектирование",%20"Согласование",%20"Сохранение%20на%20зиму"]' texts='["Вместе%20дешевле!%20Скидка%2010%",%20"Строго%20в%20рамках%20Постановления%20102-ПП",%20"Включение%20летних%20веранд%20в%20дислокацию",%20"Сохранение%20летника%20на%20зиму"]'>
-                [[Banner rounded title="Регистрация%20летних%20веранд" text="Эксперты%20по%20законному%20размещению%20летних%20веранд" background-image="url('/img/background/registration-bg.png')" content-width="l">
-                    <div class="">
-                        [[Button whitelabel>Подробнее[[/Button>
-                        [[Button action>Заказать[[/Button>
-                    </div>
-                [[/Banner>
-                [[Banner rounded title="Проект%20летней%20веранды" text="Документация%20строго%20по%20Постановлению%20102-ПП" background-image="url('/img/background/project-bg.png')" content-width="l">
-                    <div class="">
-                        [[Button whitelabel>Подробнее[[/Button>
-                        [[Button action>Заказать[[/Button>
-                    </div>
-                [[/Banner>
-                [[Banner rounded title="Согласование%20летних%20веранд" text="Разрешение%20на%20установку%20летних%20веранд%20в%20Москве%20и%20области" background-image="url('/img/background/approve-bg.png')" content-width="l">
-                    <div class="">
-                        [[Button whitelabel>Подробнее[[/Button>
-                        [[Button action>Заказать[[/Button>
-                    </div>
-                [[/Banner>
-                [[Banner rounded title="Сохрани%20летку%20на%20зиму" text="Сохранение%20летней%20веранды%20в%20период%20с%2015%20ноября%20по%2015%20марта" background-image="url('/img/background/winter-save-bg.webp')" content-width="l">
-                    <div class="">
-                        [[Button whitelabel>Подробнее[[/Button>
-                        [[Button action>Заказать[[/Button>
-                    </div>
-                [[/Banner>
-    
-            [[/Slider>
-        [[/Wide>
-        [[Title >Наши сильные стороны[[/Title>
-                    [[Subtitle>Специализация[[/Subtitle>
-                    [[Text>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <link rel="icon" href="/favicon.svg">
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Тест</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body class="body">        <dialog id="buttons" class="overlay" >
+            <div class="overlay__left">
+    <button class="button rounded-s">◀︎</button></div>
+            <div class="overlay__right">
+    <button class="button rounded-s">▶︎</button></div>
+            <div class="overlay__close">
+    <button class="button rounded-s">✕</button></div>
+            <div class="overlay__content">
+                <div class="overlay__item">
+        <div class="card rounded-m" style="   " >
+                <div class="card__content">    <button class="button rounded-s" id="BTN">0</button>
+                </div>
+        </div>
+    </div>
+<div class="overlay__item">
+        <div class="card rounded-m" style="   " >
+                <div class="card__content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eos necessitatibus consequatur mollitia. Odit at vitae asperiores blanditiis eligendi aut et similique repellat? Praesentium cumque, sunt voluptatum possimus nulla, qui vitae magni recusandae deserunt tenetur ab consectetur eaque. Consectetur voluptates vero, veritatis quo aspernatur earum sit exercitationem? Inventore, molestias iusto?
+                </div>
+        </div>
+    </div>
+<div class="overlay__item">
+        <div class="card rounded-m" style="   " >
+                <div class="card__content">    <button class="button rounded-s" id="BTN">2</button>
+                </div>
+        </div>
+    </div>
+            </div>
+        </dialog>    <header class="header">
+        <div class="header__logo">    <a class="button button_abstract rounded-s" href="/">
+                <img class="header__logo-img" src="/img/logo.svg"/>
+            </a>
+        </div>
+        <input type="checkbox" class="header__mobile-menu-button"/>
+        <div class="header__content">
+            <nav class="header__menu">            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/services/">Услуги</a>
+                <input type="checkbox" class="header__mobile-menu-item-expand"/>
+                <div class="header__submenu rounded-m"><div class="header__submenu-holder"></div>
+    <a class="button button_ghost button_small rounded-s" href="/project-summery-cafe/">Проектирование</a>
+    <a class="button button_ghost button_small rounded-s" href="/soglasovanie-letnego-cafe/">Согласование</a>
+    <a class="button button_ghost button_small rounded-s" href="/photomontage/">Фотомонтаж</a>
+    <a class="button button_ghost button_small rounded-s" href="/demontazh-letnih-cafe/">Демонтаж и хранение</a>
+    <a class="button button_ghost button_small rounded-s" href="/realizaciya/">Строительство под ключ</a>
+    <a class="button button_ghost button_small rounded-s" href="/interior-design/">Дизайн интерьера</a>
+    <a class="button button_ghost button_small rounded-s" href="/roznichnaya-licenziya-dlya-prodazhi-alcoholnoy-produkcii/">Алкогольная лицензия</a></div></div>
+            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/blog/">Информация</a>
+                <input type="checkbox" class="header__mobile-menu-item-expand"/>
+                <div class="header__submenu rounded-m"><div class="header__submenu-holder"></div>
+    <a class="button button_ghost button_small rounded-s" href="/kak-vybrat-kompaniyu-po-registraczii-letnego-kafe/">В какой компании регистрировать</a>
+    <a class="button button_ghost button_small rounded-s" href="/location-summery-cafe/">Размещение по 102-ПП</a>
+    <a class="button button_ghost button_small rounded-s" href="/shtraf-i-otvetstvennost-letnee-kafe-bez-razresheniya/">Штрафы и ответственность</a>
+    <a class="button button_ghost button_small rounded-s" href="/compact-cafe/">Компактное летнее кафе</a>
+    <a class="button button_ghost button_small rounded-s" href="/architecturno-hudozhestvennoe-reshenie/">Архитектурно художественное решение</a>
+    <a class="button button_ghost button_small rounded-s" href="/zimnie-verandy/">Зимние веранды</a></div></div>
+            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/kalkulyator-pergol/">Перголы</a>                </div>
+            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/about/">О компании</a>                </div>
+            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/otzyvy/">Отзывы</a>                </div>
+            <div class="header__menu-item">    <a class="button button_ghost rounded-s" href="/contacts/">Контакты</a>                </div>
+            </nav>
+            <div class="header__contacts">
+                <div class="header__messengers">    <button class="button button_abstract rounded-s">    
+                        <img class="header__social-img" src="/img/telegram.svg" />
+                    </button>    <button class="button button_abstract rounded-s">
+                        <img class="header__social-img" src="/img/whatsapp.svg" />
+                </button>
+                </div>    <button class="button button_small rounded-s">+7 999 813-55-55</button>    <button class="button button_action button_small rounded-s">Обратный звонок</button>
+            </div>
+        </div>    </header>    <main class="main"> 
+        <a class="link" href="http://maridiz.ru/contacts">Link</a>
+        <ol>            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>four</li>    </ol>    <button class="button rounded-s" data-overlay="buttons" data-overlay-item="2">Overlay</button>    <div class="gap"></div>    <div class="wide">        <div class="slider" data-time="6" data-pause="12">
+            <div class="slider__content">        <div class="banner banner_content-width_l rounded-m" style="background-image: url('/img/background/registration-bg.png')" >
+            <img class="banner__image" src="" alt="">
+            <div class="banner__content">
+                <h2 class="banner__title">Регистрация летних веранд</h2>
+                <div class="banner__text">Эксперты по законному размещению летних веранд</div>                    <div class="">    <button class="button button_whitelabel rounded-s">Подробнее</button>    <button class="button button_action rounded-s">Заказать</button>
+                    </div>            </div>
+        </div>        <div class="banner banner_content-width_l rounded-m" style="background-image: url('/img/background/project-bg.png')" >
+            <img class="banner__image" src="" alt="">
+            <div class="banner__content">
+                <h2 class="banner__title">Проект летней веранды</h2>
+                <div class="banner__text">Документация строго по Постановлению 102-ПП</div>                    <div class="">    <button class="button button_whitelabel rounded-s">Подробнее</button>    <button class="button button_action rounded-s">Заказать</button>
+                    </div>            </div>
+        </div>        <div class="banner banner_content-width_l rounded-m" style="background-image: url('/img/background/approve-bg.png')" >
+            <img class="banner__image" src="" alt="">
+            <div class="banner__content">
+                <h2 class="banner__title">Согласование летних веранд</h2>
+                <div class="banner__text">Разрешение на установку летних веранд в Москве и области</div>                    <div class="">    <button class="button button_whitelabel rounded-s">Подробнее</button>    <button class="button button_action rounded-s">Заказать</button>
+                    </div>            </div>
+        </div>        <div class="banner banner_content-width_l rounded-m" style="background-image: url('/img/background/winter-save-bg.webp')" >
+            <img class="banner__image" src="" alt="">
+            <div class="banner__content">
+                <h2 class="banner__title">Сохрани летку на зиму</h2>
+                <div class="banner__text">Сохранение летней веранды в период с 15 ноября по 15 марта</div>                    <div class="">    <button class="button button_whitelabel rounded-s">Подробнее</button>    <button class="button button_action rounded-s">Заказать</button>
+                    </div>            </div>
+        </div>            </div>
+            <div class="slider__teaser-list">            <div class="slider__teaser">
+                <div class="slider__teaser-bg  rounded-left-s">
+                    <div class="slider__teaser-bar"></div>
+                </div>
+                <div class="slider__teaser-title">Регистрация под ключ</div>
+                <div class="slider__teaser-text">Вместе дешевле! Скидка 10%</div>
+            </div>            <div class="slider__teaser">
+                <div class="slider__teaser-bg ">
+                    <div class="slider__teaser-bar"></div>
+                </div>
+                <div class="slider__teaser-title">Проектирование</div>
+                <div class="slider__teaser-text">Строго в рамках Постановления 102-ПП</div>
+            </div>            <div class="slider__teaser">
+                <div class="slider__teaser-bg ">
+                    <div class="slider__teaser-bar"></div>
+                </div>
+                <div class="slider__teaser-title">Согласование</div>
+                <div class="slider__teaser-text">Включение летних веранд в дислокацию</div>
+            </div>            <div class="slider__teaser">
+                <div class="slider__teaser-bg  rounded-right-s">
+                    <div class="slider__teaser-bar"></div>
+                </div>
+                <div class="slider__teaser-title">Сохранение на зиму</div>
+                <div class="slider__teaser-text">Сохранение летника на зиму</div>
+            </div>        </div>
+        </div>    </div>        <h2 class="title" >Наши сильные стороны</h2>
+                    <h3 class="subtitle" >Специализация</h3>
+                    <p class="text" >
                         Компания работает исключительно с заведениями общественного назначения, в основном с общепитом. Предлагаем варианты для установки, позволяющие экономить бюджет при обустройстве летника. Вы получаете профессиональную работу дизайнеров специализирующихся на общественных заведениях. Maridiz разработали более 200 проектов для кафе и ресторанов.
-                    [[/Text>
-                
-                    [[Subtitle>Максимум комфорта[[/Subtitle>
-                    [[Text>
+                    </p>                    <h3 class="subtitle" >Максимум комфорта</h3>
+                    <p class="text" >
                         Ключевая задача проектировщика и дизайнера создать максимально комфортную и функциональную атмосферу для посетителей вашего заведения. Помещение должно быть удобным для обслуживания посетителей персоналом. А посетители чувствовали себя комфортно находясь в вашем кафе, ресторане или на веранде.
-                    [[/Text>
-                
-                    [[Subtitle>Время дорого[[/Subtitle>
-                    [[Text>
+                    </p>                    <h3 class="subtitle" >Время дорого</h3>
+                    <p class="text" >
                         В 2022 году мы прекрасно понимаем как дорого время, его постоянно не хватает. Поэтому все этапы нашей работы озвучиваются сразу. Все сроки прописываются в договоре. Все этапы работы проговариваются, в случае если сложившаяся ситуация на объекте может увеличить сроки проведения работ, мы сообщим об этом. Готовы решать любую спорную ситуацию на объекте и предлагать решения.
-                    [[/Text>
-            [[Title>
+                    </p>
+            <h2 class="title" >
                 Услуги
-            [[/Title>
-            [[Wide>
-                [[Carousel> [[Gallery height="450" alt='["Бар%20Bigati",%20"Heritage"]' rounded src="/img/portfolio2">[[/Gallery>[[/Carousel>
-            [[/Wide>
-    [[/Main>
-    [[Footer>[[/Footer>
-[[/Page>
+            </h2>    <div class="wide">    <div class="carousel">
+            <div class="carousel__content">            </div>
+        <div class="carousel__controls">        
+            <div class="carousel__left">
+    <button class="button rounded-s">◀︎</button></div>
+            <div class="carousel__right">
+    <button class="button rounded-s">▶︎</button></div>
+        </div>
+    </div>    </div>    </main>    <footer class="footer">
+        <nav class="footer__menu">                <div class="footer__menu-group">    <a class="button button_ghost button_small rounded-s" href="/project-summery-cafe/">Проектирование</a>
+    <a class="button button_ghost button_small rounded-s" href="/soglasovanie-letnego-cafe/">Согласование</a>
+    <a class="button button_ghost button_small rounded-s" href="/photomontage/">Фотомонтаж</a>
+    <a class="button button_ghost button_small rounded-s" href="/demontazh-letnih-cafe/">Демонтаж и хранение</a>
+    <a class="button button_ghost button_small rounded-s" href="/realizaciya/">Строительство под ключ</a>
+    <a class="button button_ghost button_small rounded-s" href="/interior-design/">Дизайн интерьера</a>
+    <a class="button button_ghost button_small rounded-s" href="/roznichnaya-licenziya-dlya-prodazhi-alcoholnoy-produkcii/">Алкогольная лицензия</a></div>
+                <div class="footer__menu-group">    <a class="button button_ghost button_small rounded-s" href="/kak-vybrat-kompaniyu-po-registraczii-letnego-kafe/">В какой компании регистрировать</a>
+    <a class="button button_ghost button_small rounded-s" href="/location-summery-cafe/">Размещение по 102-ПП</a>
+    <a class="button button_ghost button_small rounded-s" href="/shtraf-i-otvetstvennost-letnee-kafe-bez-razresheniya/">Штрафы и ответственность</a>
+    <a class="button button_ghost button_small rounded-s" href="/compact-cafe/">Компактное летнее кафе</a>
+    <a class="button button_ghost button_small rounded-s" href="/architecturno-hudozhestvennoe-reshenie/">Архитектурно художественное решение</a>
+    <a class="button button_ghost button_small rounded-s" href="/zimnie-verandy/">Зимние веранды</a></div><div class="footer__menu-group">    <a class="button button_ghost button_small rounded-s" href="/kalkulyator-pergol/">Перголы</a>
+    <a class="button button_ghost button_small rounded-s" href="/about/">О компании</a>
+    <a class="button button_ghost button_small rounded-s" href="/otzyvy/">Отзывы</a>
+    <a class="button button_ghost button_small rounded-s" href="/contacts/">Контакты</a>    <button class="button button_ghost button_small rounded-s">Telegram</button>    <button class="button button_ghost button_small rounded-s">WhatApp</button>    <button class="button button_ghost button_small rounded-s">+7 (999) 813-55-55</button>
+                </div>
+        </nav>
+        <div class="footer__info">
+            <div class="caption">
+                Copyright © ИП Андреева Мария Андреевна 2015-2024, Маридиз.
+                <br>
+                Использование контента запрещается без письменного разрешения ИП Андреевой М.А.
+            </div>
+            <div class="caption">
+                ИНН 771989306812
+                <br>
+                ОГРН 315774600368370
+            </div>
+        </div>    </footer>        <script src="/script.js" defer></script>
+    </body>
+    </html>
+    
