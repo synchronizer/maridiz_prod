@@ -1478,8 +1478,8 @@ a.button {
 .input__label {
   position: absolute;
   left: calc(var(--control-size-L) * .2);
-  top: .5em;
-  font: var(--font-caption);
+  top: .4em;
+  font-size: .8rem;
   color: var(--button-label-color);
 }
 

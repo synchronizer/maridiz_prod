@@ -11,29 +11,38 @@
         <meta name="description" content="">
         <link rel="stylesheet" href="https://synchronizer.github.io/maridiz_prod/style.css">
     </head>
-    <body class="body">    <main class="main">    <div class="gap"></div>        <h1 class="supertitle" >Документация</h1>
+    <body class="body">    <div class="creeping-line">
+                <div class="creeping-line__text">
+                    Примеры компонентов
+                </div>
+            </div>
+    <main class="main">    <div class="gap"></div>        <h1 class="supertitle" >Документация</h1>
         <ol class="list" >
-            <li class="list__item" ><a class="link" href="#banner">&#60;Banner&#62;</a></li>
-            <li class="list__item" ><a class="link" href="#button">&#60;Button&#62;</a></li>
-            <li class="list__item" ><a class="link" href="#carousel">&#60;Carousel&#62;</a></li>
+            <li class="list__item" ><a class="link" href="#banner">Banner</a></li>
+            <li class="list__item" ><a class="link" href="#button">Button</a></li>
+            <li class="list__item" ><a class="link" href="#input">Input</a></li>
+            <li class="list__item" ><a class="link" href="#select">Select</a></li>
+            <li class="list__item" ><a class="link" href="#textarea">Textarea</a></li>
+            <li class="list__item" ><a class="link" href="#image">Image</a></li>
+            <li class="list__item" ><a class="link" href="#carousel">Carousel, Gallery</a></li>
         </ol>
-        <h2 class="title"  id="banner">&#60;Banner&#62;</h2>    <div class="wide">            <div class="example ">
+        <h2 class="title"  id="banner">Banner</h2>    <div class="wide">            <div class="example ">
                 <div class="example__block">        <div class="banner banner_content-width_l rounded-m" style="background-image: linear-gradient(90deg, rgba(217, 237, 0, 0.20) 1.82%, rgba(151, 255, 4, 0.60) 99.9%), radial-gradient(100% 100% at 50% 0%, #D300CC 0%, #0D096C 100%)" >
             <img class="banner__image" src="" alt="">
             <div class="banner__content">
                 <h2 class="banner__title">Регистрация летних веранд</h2>
                 <div class="banner__text">Эксперты по законному размещению летних веранд</div>    <button class="button button_action rounded-s">Заказать</button>            </div>
         </div>            </div>
-                <code class="example__code">
+                <code class="example__caption code text">
                 &lt;Banner rounded title="Регистрация летних веранд" text="Эксперты по законному размещению летних веранд" background-image="linear-gradient(90deg, rgba(217, 237, 0, 0.20) 1.82%, rgba(151, 255, 4, 0.60) 99.9%), radial-gradient(100% 100% at 50% 0%, #D300CC 0%, #0D096C 100%)" content-width="l"&gt;
                         &lt;Button action&gt;Заказать&lt;/Button&gt;
                 &lt;/Banner&gt;
             </code>
-            </div>    </div>        <h2 class="title"  id="button">&#60;Button&#62;</h2>
+            </div>    </div>        <h2 class="title"  id="button">Button</h2>
         <div class="example ">
                 <div class="example__block">    <button class="button rounded-s">Button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button&gt;Button&lt;/Button&gt;
         </code>
             </div>
@@ -41,7 +50,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_ghost rounded-s">Ghost button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button ghost&gt;Ghost button&lt;/Button&gt;
         </code>
             </div>
@@ -49,7 +58,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_action rounded-s">Action button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button action&gt;Action button&lt;/Button&gt;
         </code>
             </div>
@@ -57,7 +66,7 @@
         <div class="example ">
                 <div class="example__block">    <a class="button rounded-s" href="https://google.com">Google</a>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button href="https://google.com"&gt;Google&lt;/Button&gt;
         </code>
             </div>
@@ -65,7 +74,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_load rounded-s">Loding...</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button load&gt;Loding...&lt;/Button&gt;
         </code>
             </div>
@@ -73,7 +82,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_small rounded-s">Small button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button small&gt;Small button&lt;/Button&gt;
         </code>
             </div>
@@ -81,7 +90,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_extrasmall rounded-s">Extrasmall button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button extrasmall&gt;Extrasmall button&lt;/Button&gt;
         </code>
             </div>
@@ -89,7 +98,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button rounded-s"><div class="button__icon" style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/test.svg')"></div>Button</button>    <button class="button rounded-s"><div class="button__icon" style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/test.svg')"></div></button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button icon="https://synchronizer.github.io/maridiz_prod/icons/test.svg"&gt;Button&lt;/Button&gt;
             &lt;Button icon="https://synchronizer.github.io/maridiz_prod/icons/test.svg"&gt;&lt;/Button&gt;
         </code>
@@ -98,7 +107,7 @@
         <div class="example ">
                 <div class="example__block">    <a class="button rounded-s" href="https://synchronizer.github.io/maridiz_prod/price/price.pdf" download><div class="button__icon" style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/download.svg')"></div>Price</a>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button download href="https://synchronizer.github.io/maridiz_prod/price/price.pdf" icon="https://synchronizer.github.io/maridiz_prod/icons/download.svg"&gt;Price&lt;/Button&gt;
         </code>
             </div>
@@ -106,7 +115,7 @@
         <div class="example example_dark ">
                 <div class="example__block">    <button class="button button_whitelabel rounded-s">Whitelabel button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button whitelabel&gt;Whitelabel button&lt;/Button&gt;
         </code>
             </div>
@@ -114,7 +123,7 @@
         <div class="example ">
                 <div class="example__block">    <button class="button button_fullwidth rounded-s">Fullwidth button</button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button fullwidth&gt;Fullwidth button&lt;/Button&gt;
         </code>
             </div>
@@ -127,13 +136,202 @@
         </div>    </figure>
     </button>
         </div>
-                <code class="example__code">
+                <code class="example__caption code text">
             &lt;Button abstract&gt;&lt;Image src="https://synchronizer.github.io/maridiz_prod/img/logo.svg"&gt;&lt;/Image&gt;&lt;/Button&gt;
         </code>
             </div>
 
-        <h2 class="title"  id="carousel">Carousel</h2>
-    </main>        <script src="https://synchronizer.github.io/maridiz_prod/script.js" defer></script>
+        <h2 class="title"  id="input">Input</h2>
+        <div class="example ">
+                <div class="example__block">
+            <div class="input">
+    <input type="text" value="123" class="input__input rounded-s"   >
+  <label  class="input__label" >Label:</label></div>
+        </div>
+                <code class="example__caption code text">
+            &lt;Input label="Label" value="123"&gt;&lt;/Input&gt;
+        </code>
+            </div>
+
+        <h3 class="subtitle" >Type</h3>
+        <div class="example ">
+                <div class="example__block">
+            <div class="input">
+    <input type="password" value="" class="input__input rounded-s"   >
+  <label  class="input__label" >Password:</label></div>
+        </div>
+                <code class="example__caption code text">
+            &lt;Input label="Password" type="password"&gt;&lt;/Input&gt;
+        </code>
+            </div>        <h2 class="title"  id="select">Select</h2>
+        <div class="example ">
+                <div class="example__block">        <div class="select">
+            <select class="select__select button rounded-s" >
+                <option selected disabled>Number</option>                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+                <option value="5">Five</option>            </select>    
+        </div>
+        </div>
+                <code class="example__caption code text">
+            &lt;Select label="Number"&gt;
+                &lt;option value="1"&gt;One&lt;/option&gt;
+                &lt;option value="2"&gt;Two&lt;/option&gt;
+                &lt;option value="3"&gt;Three&lt;/option&gt;
+                &lt;option value="4"&gt;Four&lt;/option&gt;
+                &lt;option value="5"&gt;Five&lt;/option&gt;
+            &lt;/Select&gt;
+        </code>
+            </div>
+
+        <h2 class="title"  id="textarea">Textarea</h2>
+        <div class="example ">
+                <div class="example__block">
+            <div class="textarea">
+    <textarea rows="9"  class="textarea__textarea rounded-s"   ></textarea>
+  <label  class="textarea__label" >Text:</label></div>
+        </div>
+                <code class="example__caption code text">
+            &lt;Textarea label="Text" rows="9"&gt;&lt;/Textarea&gt;
+        </code>
+            </div>        <h2 class="title" >Image</h2>    <div class="wide">            <div class="example ">
+                <div class="example__block">    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/night.jpg"    />
+        </div>    </figure>            </div>
+                <code class="example__caption code text">
+                &lt;Image src="https://synchronizer.github.io/maridiz_prod/img/night.jpg" rounded&gt;&lt;/Image&gt;
+            </code>
+            </div>    </div>        <h2 class="title"  id="carousel">Carousel, Gallery</h2>    <div class="wide">                <div class="example  example_fullwidth">
+                <div class="example__block">    <div class="carousel">
+            <div class="carousel__content">    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_01.png" alt="alt 1"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_02.png" alt="alt 2"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_03.png" alt="alt 3"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_04.png" alt="alt 4"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_05.png" alt="alt 5"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_06.png" alt="alt 6"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_07.png" alt="alt 7"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_08.png" alt="alt 8"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_09.png" alt="alt 9"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_10.png" alt="alt 10"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_11.png" alt="alt 11"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_12.png" alt="alt 12"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_13.png" alt="alt 13"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_14.png" alt="alt 14"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_15.png" alt="alt 15"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_16.png" alt="alt 16"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_17.png" alt="alt 17"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_18.png" alt="alt 18"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_19.png" alt="alt 19"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_20.png" alt="alt 20"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_21.png" alt="alt 21"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_22.png" alt="alt 22"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_23.png" alt="alt 23"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_24.png" alt="alt 24"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_25.png" alt="alt 25"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_26.png" alt="alt 26"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_27.png" alt="alt 27"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/photo_28.png" alt="alt 28"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-01.png" alt="alt 29"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-02.png" alt="alt 30"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-03.png" alt="alt 31"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-04.png" alt="alt 32"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-05.png" alt="alt 33"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-06.png" alt="alt 34"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-07.png" alt="alt 35"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-08.png" alt="alt 36"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-09.png" alt="alt 37"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-10.png" alt="alt 38"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-11.png" alt="alt 39"   />
+        </div>    </figure>    <figure class="image">
+        <div class="image__wrapper">
+            <img class="image__img rounded-m" src="https://synchronizer.github.io/maridiz_prod/img/portfolio/portfolio-12.png" alt="alt 40"   />
+        </div>    </figure>            </div>    </div>                </div>
+                <code class="example__caption code text">
+                    &lt;Carousel&gt;
+                        &lt;Gallery caption='Портфолио' alt="alt" rounded src="https://synchronizer.github.io/maridiz_prod/img/portfolio"&gt;&lt;/Gallery&gt;
+                    &lt;/Carousel&gt;
+                </code>
+            </div>    </div>    </main>        <script src="https://synchronizer.github.io/maridiz_prod/script.js" defer></script>
     </body>
     </html>
     
