@@ -1,7 +1,7 @@
 
 :root {
     
-    font-size: clamp(1rem, 1.25vw, 1.6rem);
+    font-size: clamp(15px, 1.25vw, 20px);
 
     --html-bg: hsl(240deg 10% 90%);
     --body-bg: #fff;
