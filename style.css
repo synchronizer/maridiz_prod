@@ -845,10 +845,7 @@ html:has(.overlay[open]) {
   src: url(/fonts/Montserrat-VariableFont_wght.ttf);
 }
 
-@font-face {
-  font-family: "Onest";
-  src: url(/fonts/Onest-VariableFont_wght.ttf);
-}
+
 
 
 
