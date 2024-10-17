@@ -51,7 +51,7 @@
     --font-size-text: 1rem;
     --font-size-lead: 1.6rem;
     --font-size-caption: .8rem;
-    --font-size-button: .8rem;
+    --font-size-button: .9rem;
 
     --font-weight-supertitle: 700;
     --font-weight-title: 700;
@@ -182,15 +182,15 @@
 
 /* [class*="rounded-"] {
     --corner-mask-size: calc(var(--border-radius) * 2);
-    -webkit-mask:
+    mask:
       url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none" xml:space="preserve"> <rect x="0" y="0" width="1" height="1"/></svg>')
-        var(--corner-top-left-mask-size) top / calc(100% - var(--corner-top-left-mask-size) - var(--corner-top-right-mask-size) ) max(100% - var(--corner-bottom-left-mask-size), 100% - var(--corner-bottom-right-mask-size)) no-repeat,
+        calc(var(--corner-top-left-mask-size) - 1px) top / calc(100% - var(--corner-top-left-mask-size) - var(--corner-top-right-mask-size) + 2px) max(100% - var(--corner-bottom-left-mask-size) + 1px, 100% - var(--corner-bottom-right-mask-size) + 1px) no-repeat,
     
       url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none" xml:space="preserve"> <rect x="0" y="0" width="1" height="1"/></svg>')
-      var(--corner-top-left-mask-size) bottom / calc(100% - var(--corner-top-left-mask-size) - var(--corner-top-right-mask-size) ) max(100% - var(--corner-top-left-mask-size), 100% - var(--corner-top-left-mask-size)) no-repeat,
+      calc(var(--corner-top-left-mask-size) - 1px) bottom / calc(100% - var(--corner-top-left-mask-size) - var(--corner-top-right-mask-size) + 2px) max(100% - var(--corner-top-left-mask-size) + 1px, 100% - var(--corner-top-left-mask-size) + 1px) no-repeat,
 
       url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1" preserveAspectRatio="none" xml:space="preserve"> <rect x="0" y="0" width="1" height="1"/></svg>')
-        left 50% / 100% calc(100% - var(--corner-mask-size) * 2 + 2px) no-repeat,
+        left calc(50% - 1px) / 100% calc(100% - var(--corner-mask-size) * 2 + 2px) no-repeat,
 
       url('data:image/svg+xml;utf8,<svg viewBox="0 0 1 1" xmlns="http://www.w3.org/2000/svg"  ><path d="M0 1C0 0.1 0.1 0 1 0V1H0Z"/></svg>')
         top left / var(--corner-top-left-mask-size) var(--corner-top-left-mask-size) no-repeat,
@@ -262,9 +262,9 @@
     --corner-bottom-left-mask-size: calc(var(--border-radius) * 2);
 }
 
-/* ———————— */
 
-/* .rounded-m {
+
+.rounded-m {
     --border-radius: var(--bd-radius-M);
     --corner-top-left-mask-size: calc(var(--border-radius) * 2);
     --corner-top-right-mask-size: calc(var(--border-radius) * 2);
@@ -314,14 +314,12 @@
 .rounded-bottom-left-m {
     --border-radius: var(--bd-radius-M);
     --corner-bottom-left-mask-size: calc(var(--border-radius) * 2);
-} */
-
-
-/* —————— */
+}
 
 
 
-/* .rounded-l {
+
+.rounded-l {
     --border-radius: var(--bd-radius-L);
     --corner-top-left-mask-size: calc(var(--border-radius) * 2);
     --corner-top-right-mask-size: calc(var(--border-radius) * 2);
@@ -371,7 +369,7 @@
 .rounded-bottom-left-l {
     --border-radius: var(--bd-radius-L);
     --corner-bottom-left-mask-size: calc(var(--border-radius) * 2);
-} */ 
+} */
 
 .banner {
   aspect-ratio: 2/1;
@@ -557,7 +555,7 @@
     border: none;
     box-shadow: var(--shadow);
     font-size: var(--font-size-text);
-    background: var(--_search-bg);
+    background: var(--button-bg);
     backdrop-filter: blur(var(--__search-elements-blur));
     flex-shrink: 0;
 }
@@ -599,7 +597,7 @@
     max-height: calc(100%);
     background: #fff9;
     backdrop-filter: blur(var(--__search-elements-blur));
-    border-radius: var(--bd-radius-S);
+    /* border-radius: var(--bd-radius-S); */
     position: relative;
     box-shadow: var(--shadow);
 }
@@ -607,10 +605,11 @@
 .clients-map__finded-company {
     display: flex;
     gap: .75rem;
-    border-radius: 0.75rem;
+    /* border-radius: var(--bd-radius-S); */
     padding: 0.5rem;
     line-height: 1.3rem;
     cursor: pointer;
+    background: var(--button-bg);
 }
 
 .clients-map__finded-company-info {
@@ -704,6 +703,7 @@
   .example__code {
     color: var(--code-color);
     font-weight: 400;
+    display: block;
   }
   
   .example__copycode {
@@ -1238,7 +1238,6 @@ html {
     background-size: cover;
     width: min(var(--_width), 100vw - 3rem);
     min-height: calc(var(--_width) * 1);
-    border-radius: var(--bd-radius-L);
     padding: 1.5rem;
     padding-top: 3rem;
     position: relative;
@@ -1326,28 +1325,6 @@ html {
     flex-grow: 1;
   }
 
-  .plan__button {
-    height: var(--control-size-M);
-    min-width: var(--control-size-M);
-    border-radius: var(--bd-radius-S);
-    padding-inline: .75rem;
-    border: none;
-    background: var(--_button-bg-color);
-    color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    cursor: pointer;
-  }
-
-  .plan__button:any-link {
-    text-decoration: none;
-  }
-
-  .plan__button:active {
-    scale: .95;
-  }
 
   .plan_color-scheme_light {
     --_text-color: #000;
@@ -1851,11 +1828,12 @@ a.button {
   --_button-size: var(--control-size-M);
   --_label-color: var(--button-label-color);
   --_icon-size: 1.5rem;
+  --_padding-inline: .75rem;
   color: var(--_label-color);
   height: var(--_button-size);
   min-width: var(--_button-size);
-  padding-inline: calc((var(--_button-size) - var(--_icon-size)) / 2);
-  gap: calc((var(--_button-size) - var(--_icon-size)) / 2);
+  padding-inline: var(--_padding-inline);
+  gap: calc(var(--_button-size) / 2 - var(--_icon-size) / 2);
   font-size: var(--font-size-button);
   font-weight: var(--font-weight-button);
   background-color: var(--button-bg);
@@ -1864,6 +1842,7 @@ a.button {
   align-items: center;
   white-space: nowrap;
   cursor: pointer;
+  vertical-align: middle;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1876,7 +1855,8 @@ a.button {
 .button_small {
   --_button-size: var(--control-size-S);
   --_icon-size: 1.25rem;
-  font-size: var(--font-size-button);
+  --_padding-inline: .5rem;
+
 }
 
 .button_extrasmall {
@@ -1913,15 +1893,12 @@ a.button {
   width: var(--_icon-size);
   height: var(--_icon-size);
   background-color: var(--button-labe-color);
-  -webkit-mask-image: var(--icon);
-  -webkit-mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
   mask-image: var(--icon);
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
   background-color: var(--_label-color);
+  margin-inline: calc(var(--_button-size) / 2 - var(--_icon-size) / 2 - var(--_padding-inline));
 }
 
 .button_whitelabel {

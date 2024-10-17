@@ -694,7 +694,7 @@ async function initMap(node) {
 
         filteredCompanies.forEach(company => {
             const findedCompany = document.createElement('div');
-            findedCompany.className = 'clients-map__finded-company';
+            findedCompany.className = 'clients-map__finded-company rounded-s';
             findedCompany.setAttribute('data-coordinates', company.coordinates.join(","))
             findedCompany.setAttribute('tabindex', "0")
             const logoStyle = company.logo ? `background-image: url('${company.logo}'); background-size: cover` : "";
