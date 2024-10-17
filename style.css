@@ -878,7 +878,8 @@ html {
 
 .plan {
     --_width: 20rem;
-    --_background: var(--plan-bg);
+    background: var(--_background), var(--plan-bg);
+    background-size: cover;
     width: min(var(--_width), 100vw - 3rem);
     min-height: calc(var(--_width) * 1);
     border-radius: var(--bd-radius-L);
@@ -894,17 +895,7 @@ html {
   }
 
 
-  .plan:after {
-    content: '';
-    position: absolute;
-    inset: -4rem;
-    filter: blur(2rem);
-    background-image: var(--_background);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
+  
 
   .plan__header {
     position: absolute;
