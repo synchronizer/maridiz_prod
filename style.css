@@ -56,9 +56,9 @@
     --font-weight-supertitle: 600;
     --font-weight-title: 600;
     --font-weight-subtitle: 600;
-    --font-weight-text: 300;
-    --font-weight-lead: 300;
-    --font-weight-caption: 300;
+    --font-weight-text: 400;
+    --font-weight-lead: 400;
+    --font-weight-caption: 400;
     --font-weight-button: 500;
 
     --line-height-supertitle: 3.3rem;
@@ -669,11 +669,6 @@
 
 .example {
     padding: 2em;
-    position: relative;
-    left: -2rem;
-    right: -2rem;
-    margin-left: auto;
-    margin-right: auto;
     border: 1px dashed var(--grey-border);
     resize: both;
     overflow: auto;
@@ -1908,7 +1903,7 @@ a.button {
 }
 
 .button_ghost:not(:hover):not(:focus),
-.button_ghost.button_disabled {
+.button_ghost[disabled] {
   background-color: transparent;
   box-shadow: none;
 }
@@ -1937,7 +1932,7 @@ a.button {
 
 
 
-.button_disabled {
+.button[disabled] {
   opacity: .5;
   pointer-events: none;
 }
