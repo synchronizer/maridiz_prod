@@ -42,8 +42,8 @@
     --shadow: 0 1.5rem 1.5rem -.75rem #0A002688;
 
 
-    --font-family: 'Onest', sans-serif;
-    --font-family-title: 'Onest', sans-serif;
+    --font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;;
+    --font-family-title: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;;
 
     --font-size-supertitle: 3rem;
     --font-size-title: 2rem;
@@ -53,9 +53,9 @@
     --font-size-caption: .8rem;
     --font-size-button: .8rem;
 
-    --font-weight-supertitle: 600;
-    --font-weight-title: 600;
-    --font-weight-subtitle: 600;
+    --font-weight-supertitle: 700;
+    --font-weight-title: 700;
+    --font-weight-subtitle: 700;
     --font-weight-text: 400;
     --font-weight-lead: 400;
     --font-weight-caption: 400;
@@ -64,10 +64,10 @@
     --line-height-supertitle: 3.3rem;
     --line-height-title: 2.4rem;
     --line-height-subtitle: 1.68rem;
-    --line-height-text: 1.5rem;
+    --line-height-text: 1.6rem;
     --line-height-lead: 2.4rem;
     --line-height-text-narrow: 1.4rem;
-    --line-height-caption: 1.44rem;
+    --line-height-caption: 1.5rem;
 
     --content-width-s: 21.25rem;
     --content-width-m: 44rem;
@@ -1245,7 +1245,7 @@ html {
     overflow: hidden;
     isolation: isolate;
     color: var(--_text-color);
-    font-size: .95rem;
+    font-size: .9rem;
     display: flex;
     flex-direction: column;
   }
@@ -1279,7 +1279,7 @@ html {
 
 
   .plan__name {
-    font-weight: 600;
+    font-weight: 700;
   }
 
 
@@ -1302,7 +1302,7 @@ html {
   .plan__price {
     margin-top: 4rem;
     font-size: 2.25rem;
-    line-height: 1;
+    line-height: 1.25;
     font-weight: 600;
   }
 
@@ -1618,7 +1618,7 @@ html {
   }
 }
 .stages {
-    /* row-gap: 1.5rem; */
+    row-gap: 3rem;
     column-gap: .75rem;
     counter-reset: item;
     margin-top: 3rem;
@@ -1645,7 +1645,7 @@ html {
     font-size: 9rem;
     color: var(--grey-bg);
     font-weight: 900;
-    line-height: 1;
+    line-height: .7;
     text-align: center;
     z-index: -1;
     text-shadow: .75rem .25rem 0 var(--button-bg);
