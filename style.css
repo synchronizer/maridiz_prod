@@ -1143,13 +1143,13 @@
 
 
 .notifications__item_success .notifications__item-icon{
-    background-image: url(/icons/notify-success.svg);
+    background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-success.svg);
 }
 .notifications__item_attention .notifications__item-icon{
-    background-image: url(/icons/notify-attention.svg);
+    background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-attention.svg);
 }
 .notifications__item_error .notifications__item-icon{
-    background-image: url(/icons/notify-error.svg);
+    background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-error.svg);
 }
 
 .notifications__item-icon {
@@ -1158,7 +1158,7 @@
     border-radius: var(--bd-radius-S);
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(/icons/notify-message.svg);
+    background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-message.svg);
 }
 
 .notifications__item-text {
@@ -1255,12 +1255,12 @@ html:has(.overlay[open]) {
 
 @font-face {
   font-family: "Montserrat";
-  src: url(/fonts/Montserrat-VariableFont_wght.ttf);
+  src: url(https://synchronizer.github.io/maridiz_prod/fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 /* @font-face {
   font-family: "Onest";
-  src: url(/fonts/Onest-VariableFont_wght.ttf);
+  src: url(https://synchronizer.github.io/maridiz_prod/fonts/Onest-VariableFont_wght.ttf);
 } */
 
 /* Documentation Rules & Fixes ————————————————————————————————————————— */
