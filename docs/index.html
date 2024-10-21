@@ -11,12 +11,17 @@
         <meta name="description" content="">
         <link rel="stylesheet" href="https://synchronizer.github.io/maridiz_prod/style.css">
     </head>
-    <body class="body">    <div class="creeping-line">
-                <div class="creeping-line__text">
-                    Маридиз – Эксперты №1 по летним кафе в Москве под ключ!   ・   Примеры компонентов
-                </div>
+    <body class="body">
+        <div class="notifications">
+        <div class="notifications__prototype">
+            <div class="notifications__item">
+            <div class="notifications__item-icon"></div>
+            <div class="notifications__item-text">prototype</div>
+             <div class="notifications__item-close">    <button class="button button_ghost button_small button_whitelabel rounded-s"><div class="button__icon" style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/solar_close-circle-linear.svg')"></div></button>
             </div>
-    <main class="main">    <div class="gap"></div>        <h1 class="supertitle" >Документация</h1>
+        </div>
+        </div>
+    </div>    <main class="main">    <div class="gap"></div>        <h1 class="supertitle" >Документация</h1>
         <ol class="list" >
             <li class="list__item" ><a class="link" href="#banner">Banner</a></li>
             <li class="list__item" ><a class="link" href="#button">Button</a></li>
@@ -27,6 +32,7 @@
             <li class="list__item" ><a class="link" href="#inset">Inset</a></li>
             <li class="list__item" ><a class="link" href="#carousel">Carousel, Gallery</a></li>
             <li class="list__item" ><a class="link" href="#clients-map">Clients-map</a></li>
+            <li class="list__item" ><a class="link" href="#notifications">Notifications</a></li>
         </ol>
         <h2 class="title"  id="banner">Banner</h2>    <div class="wide">            <div class="example ">
                 <div class="example__block">        <div class="banner banner_content-width_l rounded-m" style="background-image: linear-gradient(90deg, rgba(217, 237, 0, 0.20) 1.82%, rgba(151, 255, 4, 0.60) 99.9%), radial-gradient(100% 100% at 50% 0%, #D300CC 0%, #0D096C 100%)" >
@@ -170,7 +176,7 @@
         <div class="example ">
                 <div class="example__block">        <div class="select">
             <select class="select__select button rounded-s" >
-                <option selected disabled>Number</option>                <option value="1">One</option>
+                <option selected disabled value="">Number</option>                <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
                 <option value="4">Four</option>
@@ -373,7 +379,35 @@
                 <code class="example__code">
                 &lt;Clients-map&gt;&lt;/Clients-map&gt;
             </code>
-            </div>    </div>    </main>    <footer class="footer">
+            </div>    </div>        <h2 class="title"  id="notifications">Notifications</h2>
+        <div style="display: flex; flex-direction: column; gap: .75rem;">
+            <div class="input">
+    <input type="text" value="Текст уведомления" class="input__input rounded-s"    id="notification-text">
+  <label  class="input__label" >text:</label></div>        <div class="select">
+            <select class="select__select button rounded-s"  id="notification-type">
+                <option selected disabled value="">Type</option>            <option value="success">Success</option>
+            <option value="attention">Attention</option>
+            <option value="error">Error</option>
+            <option value=false>Не указан</option>            </select>    
+        </div>        <div class="select">
+            <select class="select__select button rounded-s"  id="notification-autoclose">
+                <option selected disabled value="">Autoclose</option>            <option value="true">true</option>
+            <option value="">false</option>            </select>    
+        </div>    <button class="button rounded-s" id="notification-generate">Notify!</button>
+        <script>
+            const notificationText = document.querySelector('#notification-text'),
+                  notificationType = document.querySelector('#notification-type'),
+                  notificationAutoclose = document.querySelector('#notification-autoclose'),
+                  notificationGenerate = document.querySelector('#notification-generate');            notificationGenerate.addEventListener('click', () => {
+                window.pushNotification({
+                    text: notificationText.value,
+                    type: notificationType.value,
+                    autoclose: notificationAutoclose.value,
+                });
+            })
+        </script>
+        </div>
+    </main>    <footer class="footer">
         <nav class="footer__menu">                <div class="footer__menu-group">    <a class="button button_ghost button_small rounded-s" href="https://synchronizer.github.io/maridiz_prod/project-summery-cafe/">Проектирование</a>
     <a class="button button_ghost button_small rounded-s" href="https://synchronizer.github.io/maridiz_prod/soglasovanie-letnego-cafe/">Согласование</a>
     <a class="button button_ghost button_small rounded-s" href="https://synchronizer.github.io/maridiz_prod/photomontage/">Фотомонтаж</a>

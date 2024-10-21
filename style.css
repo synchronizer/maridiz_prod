@@ -28,6 +28,10 @@
     --attractive-bg: linear-gradient(to left bottom, #00F2BA 0%, #00C22D 100%);
 
     --animation-duration: .5s;
+    --animation-duration-m: .5s;
+    --animation-duration-s: .3s;
+
+    --animation-timing-function: cubic-bezier(0.090, 0.615, 0.405, 0.980);
 
 
 
@@ -1072,6 +1076,100 @@
   );
   width: var(--width);
   margin-inline: auto;
+}
+.notifications {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.375em;
+    max-height: 100vh;
+  }
+
+.notifications__item {
+    --__background-color: var(--black-bg);
+    --__line-height: 1.35rem;
+    --__width: 16rem;
+    border-radius: var(--bd-radius-M);
+    background: var(--__background-color);
+    padding: .75rem;
+    color: #fff;
+    font-size: 0.9rem;
+    width: min(var(--__width), 100vw - 1.5rem);
+    line-height: var(--__line-height);
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    gap: 0.75rem;
+    animation: notifications__item var(--animation-duration-s) var(--animation-timing-function);
+}
+
+.notifications__item_hide {
+    animation-name: notifications__item_hide;
+    animation-fill-mode: both;
+}
+
+@keyframes notifications__item {
+    0% {
+        translate: var(--__width);
+        display: flex;
+    }
+    99% {
+        translate: 0;
+        display: flex;
+    }
+    100% {
+        display: none;
+    }
+}
+
+@keyframes notifications__item_hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+.notifications__item-close {
+    opacity: 0.5;
+    margin-left: auto;
+}
+
+
+.notifications__item_success .notifications__item-icon{
+    background-image: url(/icons/notify-success.svg);
+}
+.notifications__item_attention .notifications__item-icon{
+    background-image: url(/icons/notify-attention.svg);
+}
+.notifications__item_error .notifications__item-icon{
+    background-image: url(/icons/notify-error.svg);
+}
+
+.notifications__item-icon {
+    height: var(--control-size-S);   
+    aspect-ratio: 1;
+    border-radius: var(--bd-radius-S);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/icons/notify-message.svg);
+}
+
+.notifications__item-text {
+    min-height: var(--control-size-S);
+    display: flex;
+    align-items: center;
+}
+
+
+.notifications__prototype {
+    display: none;
 }
 .overlay {
     width: 100%;
