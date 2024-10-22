@@ -33,6 +33,7 @@
             <li class="list__item" ><a class="link" href="#carousel">Carousel, Gallery</a></li>
             <li class="list__item" ><a class="link" href="#clients-map">Clients-map</a></li>
             <li class="list__item" ><a class="link" href="#notifications">Notifications</a></li>
+            <li class="list__item" ><a class="link" href="#call-request">Call-request</a></li>
         </ol>
         <h2 class="title"  id="banner">Banner</h2>    <div class="wide">            <div class="example ">
                 <div class="example__block">        <div class="banner banner_content-width_l rounded-m" style="background-image: linear-gradient(90deg, rgba(217, 237, 0, 0.20) 1.82%, rgba(151, 255, 4, 0.60) 99.9%), radial-gradient(100% 100% at 50% 0%, #D300CC 0%, #0D096C 100%)" >
@@ -154,7 +155,7 @@
         <div class="example ">
                 <div class="example__block">
             <div class="input">
-    <input type="text" value="123" class="input__input rounded-s"   >
+    <input type="text" value="123" class="input__input rounded-s"  >
   <label  class="input__label" >Label:</label></div>
         </div>
                 <code class="example__code">
@@ -166,7 +167,7 @@
         <div class="example ">
                 <div class="example__block">
             <div class="input">
-    <input type="password" value="" class="input__input rounded-s"   >
+    <input type="password" value="" class="input__input rounded-s"  >
   <label  class="input__label" >Password:</label></div>
         </div>
                 <code class="example__code">
@@ -382,7 +383,7 @@
             </div>    </div>        <h2 class="title"  id="notifications">Notifications</h2>
         <div style="display: flex; flex-direction: column; gap: .75rem;">
             <div class="input">
-    <input type="text" value="Текст уведомления" class="input__input rounded-s"    id="notification-text">
+    <input type="text" value="Текст уведомления" class="input__input rounded-s"   id="notification-text">
   <label  class="input__label" >text:</label></div>        <div class="select">
             <select class="select__select button rounded-s"  id="notification-type">
                 <option selected disabled value="">Type</option>            <option value="success">Success</option>
@@ -407,6 +408,26 @@
             })
         </script>
         </div>
+        <h2 class="title"  id="call-request">Call-request</h2>
+        <div class="inset rounded-m">
+        <form method="dialog" class="call-request" >
+                <h3 class="call-request__title">Заявка на обратный звонок</h3>
+              <div class="input">
+    <input type="text" value="" class="input__input rounded-s"   name="name">
+  <label  class="input__label" >Имя:</label></div>
+              <div class="input">
+    <input type="tel" value="" class="input__input rounded-s"   name="phone">
+  <label  class="input__label" >Номер телефона:</label></div>
+              <div class="input">
+    <input type="email" value="" class="input__input rounded-s"   name="email">
+  <label  class="input__label" >E-mail:</label></div>
+              <div class="textarea">
+    <textarea rows="5"  class="textarea__textarea rounded-s"    name="comment"></textarea>
+  <label  class="textarea__label" >Комментарий:</label></div>
+              <div class="call-request__send">    <button class="button rounded-s" name="send">Отправить</button>
+            </div>
+        </form>
+    </div>
     </main>    <footer class="footer">
         <nav class="footer__menu">                <div class="footer__menu-group">    <a class="button button_ghost button_small rounded-s" href="https://synchronizer.github.io/maridiz_prod/project-summery-cafe/">Проектирование</a>
     <a class="button button_ghost button_small rounded-s" href="https://synchronizer.github.io/maridiz_prod/soglasovanie-letnego-cafe/">Согласование</a>

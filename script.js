@@ -34,6 +34,82 @@ Array.from(document.querySelectorAll('.notifications__item')).forEach(notificati
     })
 })
 
+
+Array.from(document.querySelectorAll('.call-request')).forEach(item => {
+    const name = item.querySelector('[name="name"]'),
+        phone = item.querySelector('[name="phone"]'),
+        send = item.querySelector('[name="send"]'),
+        email = item.querySelector('[name="email"]'),
+        comment = item.querySelector('[name="comment"]');
+    // utm_source = item.getAttribute('utm_source'),
+    // utm_medium = item.getAttribute('utm_medium'),
+    // utm_campaign = item.getAttribute('utm_campaign'),
+    // utm_term = item.getAttribute('utm_term'),
+    // utm_content = item.getAttribute('utm_content');
+
+    function checkFields() {
+        if (
+            (name && !name.value)
+            || (phone && phone.value.length) < 3
+            // || (email && !email.b.valid)
+        ) { send.setAttribute('disabled', '') } else { send.removeAttribute('disabled') }
+    };
+    checkFields();
+    if (name) name.addEventListener('input', checkFields);
+    if (phone) phone.addEventListener('input', checkFields);
+    if (email) email.addEventListener('input', checkFields);
+
+    send.onclick = () => {
+        const form = new FormData();
+        form.append('TYPE', 'feedback');
+        if (name) form.append('NAME', name.value);
+        if (phone) form.append('PHONE', phone.value);
+        if (email) form.append('EMAIL', email.value);
+        if (comment) form.append('COMMENT', comment.value);
+        form.append('PAGE', location.pathname);
+
+        // if (utm_source) form.append('UTM_SOURCE', utm_source);
+        // if (utm_medium) form.append('UTM_MEDIUM', utm_medium);
+        // if (utm_campaign) form.append('UTM_CAMPAIGN', utm_campaign);
+        // if (utm_term) form.append('UTM_TERM', utm_term);
+        // if (utm_content) form.append('UTM_CONTENT', utm_content);
+
+        // send.b.loadStart();
+        // if (name) name.b.disable();
+        // if (phone) phone.b.disable();
+        // if (email) email.b.disable();
+        // if (comment) comment.b.disable();
+
+
+        fetch('https://evev.tupo.best/action.php', {
+            method: 'POST',
+            body: form,
+        }).then(response => {
+
+            if (response.status == 200) {
+                window.pushNotification({
+                    text: `Заявка на звонок по номеру ${phone.value} отправлена`,
+                    type: 'success',
+                    autoclose: true,
+                })
+            }
+            else {
+                window.pushNotification({
+                    text: `Заявку на звонок по не удалось отправить`,
+                    type: 'error',
+                    autoclose: false,
+                })
+            }
+        }).catch(() => {
+            window.pushNotification({
+                text: `Заявку на звонок по номеру возможно не удалось отправить`,
+                type: 'attention',
+                autoclose: true,
+            })
+        })
+
+    }
+})
 Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
     const wrapper = carousel.querySelector('.carousel__content'),
             left = carousel.querySelector('.carousel__left'),
@@ -880,3 +956,62 @@ Array.from(document.querySelectorAll('.slider')).forEach(slider => {
     sliderPlay();
 
 })
+Array.from(document.querySelectorAll('.input')).forEach(item => {
+    const input = item.querySelector('.input__input');
+    const clear = item.querySelector('.input__clear');
+    
+    input.b = {};
+    
+    input.b.enable = () => {
+      item.classList.remove('input_disabled');
+      input.disabled = false;
+    }
+    
+    input.b.disable = () => {
+      item.classList.add('input_disabled');
+      input.disabled = true;
+    }
+    
+  //  clear.onclick = () => {input.value = ''};
+    
+    const validateTel = () => {
+      
+      
+      input.value = '+7' + input.value
+        .replace('+7', '')
+        .replace(/\D/g, '')
+        .substring(0,10);
+      
+      input.value =(
+        input.value.slice(0, 8) + ' ' +
+        input.value.slice(8, 10) + ' ' +
+        input.value.slice(10))
+      .trim()
+      .replaceAll(' ', '-')
+      
+      input.value =(
+        input.value.slice(0, 2) + ' ' +
+        input.value.slice(2, 5) + ' ' +
+        input.value.slice(5))
+      .trim()
+      
+    }
+    if (input.getAttribute('type') == "tel") {
+      validateTel()
+      input.addEventListener('input', () => validateTel())
+    }
+    
+    const validateEmail = () => {
+      input.b.valid = input.value
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+      
+    };
+    
+    if (input.getAttribute('type') == "email") {
+      validateEmail()
+      input.addEventListener('input', () => validateEmail())
+    }
+  })

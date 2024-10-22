@@ -1,12 +1,10 @@
 
 :root {
-
-    --html-bg: hsl(240deg 10% 90%);
-    --body-bg: #fff;
-    --grey-bg: hsl(240deg 15% 94%);
+    --grey-bg: light-dark(hsl(240deg 15% 94%), hsl(240deg 8% 18%));
     --black-bg: #14141A;
-    --button-bg: rgba(172, 172, 191, 0.4);
-    --button-label-color: #000;
+    --button-bg: hsla(240, 13%, 71%, 0.4);
+    --input-bg: hsl(240deg 13% 100% / 0.25);
+    /* --button-label-color: light-dark(#000, #fff); */
     --light-text-color: hsl(240deg 5% 40% / 80%);
     --border-color: hsl(240deg 5% 50% / 70%);
 
@@ -534,6 +532,21 @@
   border-radius: var(--bd-radius-M);
   overflow: hidden;
 } */
+.call-request {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.call-request__title {
+    font-size: var(--font-size-subtitle);
+    line-height: var(--line-height-subtitle);
+    font-weight: var(--font-weight-subtitle);
+}
+
+.call-request__send {
+    align-self: start;
+}
 
 .card {
   background-color: var(--grey-bg);
@@ -770,7 +783,6 @@
     resize: both;
     overflow: auto;
     position: relative;
-    background-color: #fff;
 
   }
   
@@ -1253,65 +1265,9 @@ html:has(.overlay[open]) {
   margin: 0;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url(https://synchronizer.github.io/maridiz_prod/fonts/Montserrat-VariableFont_wght.ttf);
-}
-
-/* @font-face {
-  font-family: "Onest";
-  src: url(https://synchronizer.github.io/maridiz_prod/fonts/Onest-VariableFont_wght.ttf);
-} */
-
-/* Documentation Rules & Fixes ————————————————————————————————————————— */
-/* .documentation {
-    max-width: 100%;
-    overflow-x: hidden;
-    font-size: var(--font-size-text);
-    color: var(--black-S)
-  }
-  
-  .documentation .subtitle {
-    padding-left: 0;
-    color: var(--black-S);
-  }
-  
-  .documentation .input__input {
-    height: var(--control-size-L);
-    border-radius: var(--bd-radius-S);
-    border: 1px solid var(--grey-S);
-    box-sizing: border-box;
-    padding: 1em calc(var(--control-size-L) * .2) 0;
-    font: var(--font-text);
-    font-weight: 400;
-    width: 100%;
-    background-color: #fffd;
-  }
-  
-  .documentation ol {
-    margin-left: 0;
-  }
-  
-  .documentation p {
-    font-size: inherit;
-  } */
-
-/* Layout ————————————————————————————————————————————————————————————————————————— */
 html {
   scroll-behavior: smooth;
-  background-color: var(--html-bg);
-  /* color-scheme: light dark; */
 }
-
-/* @media (prefers-color-scheme: dark) {
-    :root {
-      --main-bg: hsl(0 0% 5%);
-      --card-bg: #222;
-      --button-bg: rgba(172, 172, 191, 0.4);
-      --font-weight-text: 200;
-      --button-label-color: #fff;
-    }
-  } */
 
 .body {
   font-family: var(--font-family);
@@ -1320,7 +1276,6 @@ html {
   font-weight: var(--font-weight-text);
   width: var(--page-width);
   margin-inline: auto;
-  background-color: var(--body-bg);
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
@@ -1903,31 +1858,23 @@ ol.list_no-marker {
     text-align: center;
 }
 
-
 .button,
 .button:any-link,
 a.button {
-  color: var(--label-color);
   text-decoration: none;
   appearance: none;
   border: none;
+  color: currentColor;
 }
 
-
-.button:not(.button_whitelabel){
-  --label-color: var(--button-label-color);
-}
 .button_whitelabel {
-  --label-color: #fff;
+  color: #fff;
 }
 
 .button {
-  box-sizing: border-box;
   --_button-size: var(--control-size-M);
-  --_label-color: var(--button-label-color);
   --_icon-size: 1.5rem;
   --_padding-inline: .75rem;
-  color: var(--_label-color);
   height: var(--_button-size);
   min-width: var(--_button-size);
   padding-inline: var(--_padding-inline);
@@ -1986,26 +1933,16 @@ a.button {
   box-shadow: none;
 }
 
-
 .button__icon {
   width: var(--_icon-size);
   height: var(--_icon-size);
-  background-color: var(--button-labe-color);
+  background-color: currentColor;
   mask-image: var(--icon);
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
-  background-color: var(--_label-color);
   margin-inline: calc(var(--_button-size) / 2 - var(--_icon-size) / 2 - var(--_padding-inline));
 }
-
-.button_whitelabel {
-  --_label-color: #fff;
-}
-
-
-
-
 
 .button[disabled] {
   opacity: .5;
@@ -2046,7 +1983,6 @@ a.button {
   }
 }
 
-
 .input {
   position: relative;
 }
@@ -2059,7 +1995,7 @@ a.button {
   font: var(--font-text);
   font-weight: 400;
   width: 100%;
-  background-color: var(--highlight-bg);
+  background-color: var(--input-bg);
 }
 
 .input__label {
@@ -2067,7 +2003,7 @@ a.button {
   left: calc(var(--control-size-L) * .2);
   top: .4em;
   font-size: .8rem;
-  color: var(--button-label-color);
+  opacity: 0.5;
 }
 
 .input__clear {
@@ -2077,11 +2013,11 @@ a.button {
 }
 
 .input__input:placeholder-shown~.input__clear,
-.input_disabled .input__clear {
+.input:has(.input__input[disabled]) .input__clear {
   display: none;
 }
 
-.input_disabled {
+.input:has(.input__input[disabled]) {
   opacity: .5;
 }
 
@@ -2110,52 +2046,57 @@ a.button {
     background-position: right .75rem top .75rem;
     text-align: left;
   }
+
+  .select:has(.select__select[disabled]) {
+    opacity: 0.5;
+  }
   
   @media (max-width: 720px) {
     .select {
       width: 100%;
     }
   }
-
 .textarea {
-    position: relative;
-  }
-  
-  .textarea__textarea {
-    min-height: var(--control-size-L);
-    border: 1px solid var(--grey-border);
-    box-sizing: border-box;
-    padding: 1.5em calc(var(--control-size-L) * .2) 0;
-    font: var(--font-text);
-    font-weight: 400;
-    width: 100%;
-    resize: vertical;
-  
-  }
-  
-  .textarea__label {
-    position: absolute;
-    left: calc(var(--control-size-L) * .2);
-    top: .5em;
-    font: var(--font-caption);
-  }
-  
-  .textarea__label_hidden {
-    opacity: 0;
-  }
-  
-  .textarea__clear {
-    position: absolute;
-    right: .25em;
-    top: .25em;
-  }
-  
-  .textarea__textarea:placeholder-shown~.textarea__clear,
-  .textarea_disabled .textarea__clear {
-    display: none;
-  }
-  
-  .textarea_disabled {
-    opacity: .5;
-  }
-  
+  position: relative;
+}
+
+.textarea__textarea {
+  min-height: var(--control-size-L);
+  border: 1px solid var(--grey-border);
+  box-sizing: border-box;
+  padding: 1.5em calc(var(--control-size-L) * .2) 0;
+  font: var(--font-text);
+  font-weight: 400;
+  width: 100%;
+  resize: vertical;
+  background-color: var(--input-bg);
+}
+
+
+
+.textarea__label {
+  position: absolute;
+  left: calc(var(--control-size-L) * .2);
+  top: .4em;
+  font-size: .8rem;
+  opacity: 0.5;
+}
+
+.textarea__label_hidden {
+  opacity: 0;
+}
+
+.textarea__clear {
+  position: absolute;
+  right: .25em;
+  top: .25em;
+}
+
+.textarea__textarea:placeholder-shown~.textarea__clear,
+.textarea:has(.textarea__textarea[disabled]) .textarea__clear {
+  display: none;
+}
+
+.textarea:has(.textarea__textarea[disabled]) {
+  opacity: .5;
+}
