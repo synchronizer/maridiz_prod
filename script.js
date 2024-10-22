@@ -1,4 +1,39 @@
 
+Array.from(document.querySelectorAll('.notifications')).forEach(notifications => {
+    window.pushNotification = (options) => {
+        const { text, type, autoclose, closeAction} = options;
+        const notifications__item = notifications.querySelector('.notifications__prototype > .notifications__item').cloneNode(true);
+        if (type) { notifications__item.classList.add(`notifications__item_${type}`) }
+        notifications__item.querySelector('.notifications__item-text').innerText = text;
+        notifications.appendChild(notifications__item);
+
+        const notifications__itemClose = notifications__item.querySelector('.notifications__item-close');
+        notifications__itemClose.addEventListener('click', () => {
+            closeAction && closeAction()
+            notifications__item.remove()
+        })
+        console.log(autoclose)
+
+        if (autoclose) {
+            setTimeout(() => {
+                notifications__item.classList.add('notifications__item_hide')
+                setTimeout(() => {
+                    notifications__item.remove()
+                }, 600)
+            }, 7000)
+        }
+    }
+})
+
+Array.from(document.querySelectorAll('.notifications__item')).forEach(notifications__item => {
+    notifications__item.querySelector('.notifications__item-close').addEventListener('click', () => {
+        notifications__item.classList.add('notifications__item_hide')
+                setTimeout(() => {
+                    notifications__item.remove()
+                }, 600)
+    })
+})
+
 Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
     const wrapper = carousel.querySelector('.carousel__content'),
             left = carousel.querySelector('.carousel__left'),
@@ -717,40 +752,14 @@ async function initMap(node) {
         });
     })
 }
-Array.from(document.querySelectorAll('.notifications')).forEach(notifications => {
-    window.pushNotification = (options) => {
-        const { text, type, autoclose } = options;
-        const notifications__item = notifications.querySelector('.notifications__prototype > *').cloneNode(true);
-        if (type) { notifications__item.classList.add(`notifications__item_${type}`) }
-        notifications__item.querySelector('.notifications__item-text').innerText = text;
-        notifications.appendChild(notifications__item);
-
-        const notifications__itemClose = notifications__item.querySelector('.notifications__item-close');
-        notifications__itemClose.addEventListener('click', () => {
-            notifications__item.remove()
-        })
-        console.log(autoclose)
-
-        if (autoclose) {
-            setTimeout(() => {
-                notifications__item.classList.add('notifications__item_hide')
-                setTimeout(() => {
-                    notifications__item.remove()
-                }, 600)
-            }, 7000)
-        }
-    }
-})
-
-Array.from(document.querySelectorAll('.notifications__item')).forEach(notifications__item => {
-    notifications__item.querySelector('.notifications__item-close').addEventListener('click', () => {
-        notifications__item.classList.add('notifications__item_hide')
-                setTimeout(() => {
-                    notifications__item.remove()
-                }, 600)
+if (!window.localStorage.getItem('acceptCookies')) {
+    pushNotification({
+        text: 'Сайт использует cookies',
+        closeAction: () => {
+            window.localStorage.setItem('acceptCookies', true)
+        },
     })
-})
-
+}
 
 Array.from(document.querySelectorAll('.overlay')).forEach(overlay => {
     const overlay__left = overlay.querySelector('.overlay__left'),
