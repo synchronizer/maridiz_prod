@@ -3,6 +3,7 @@
     --grey-bg: light-dark(hsl(240deg 15% 94%), hsl(240deg 8% 18%));
     --black-bg: #14141A;
     --button-bg: hsla(240, 13%, 71%, 0.4);
+    --button_appearance_dark-bg: hsla(0, 0%, 0%, 0.75);
     --input-bg: hsl(240deg 13% 100% / 0.25);
     /* --button-label-color: light-dark(#000, #fff); */
     --light-text-color: hsl(240deg 5% 40% / 80%);
@@ -23,7 +24,7 @@
 
 
 
-    --attractive-bg: linear-gradient(to left bottom, #00F2BA 0%, #00C22D 100%);
+    --attractive-bg: linear-gradient(to right top, hsl(140deg 100% 55%) 0%, hsl(180deg 100% 55%) 100%);
 
     --animation-duration: .5s;
     --animation-duration-m: .5s;
@@ -388,7 +389,6 @@
     --__background-color: var(--black-bg);
     --__line-height: 1.35rem;
     --__width: 20rem;
-    border-radius: var(--bd-radius-M);
     background: var(--__background-color);
     padding: .75rem;
     color: #fff;
@@ -583,7 +583,11 @@
 .carousel {
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-inline: calc((100% - var(--page-width)) / 2);
+  padding-inline: calc((var(--page-width) - 100%) / 2);
 }
+
 
 .carousel__content {
   margin-inline: calc((100% - var(--page-width)) / 2);
@@ -605,27 +609,33 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;  /* mozilla */
 }
-  
 
-  .carousel__controls {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 1.5rem;
-    gap: .75rem;
-  }
+.carousel__left,
+.carousel__right {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.carousel__left {
+  left: 1.5rem;
+}
+
+.carousel__right {
+  right: 1.5rem;
+}
   .carousel__left_hide,
   .carousel__right_hide {
-    opacity: 0.5;
+    display: none;
     pointer-events: none;
   }
-  .carousel__controls:has(.carousel__left_hide):has(.carousel__right_hide) {
-    display: none;
-  }
+
   
   
 
 .clients-map {
     --__search-elements-blur: 1rem;
+    --__search-elements-bg: hsl(0 0 100% / .75);
     position: relative;
     
 }
@@ -666,13 +676,13 @@
     border: none;
     box-shadow: var(--shadow);
     font-size: var(--font-size-text);
-    background: var(--button-bg);
+    background: var(--__search-elements-bg);
     backdrop-filter: blur(var(--__search-elements-blur));
     flex-shrink: 0;
 }
 
 .ymaps3x0--main-engine-container {
-    filter: brightness(0.925) saturate(0);
+    /* filter: brightness(0.925) saturate(0); */
 }
 
 
@@ -720,7 +730,7 @@
     padding: 0.5rem;
     line-height: 1.3rem;
     cursor: pointer;
-    background: var(--button-bg);
+    background: var(--__search-elements-bg);
 }
 
 .clients-map__finded-company-info {
@@ -780,23 +790,15 @@
 .example {
     padding: 2em;
     border: 1px dashed var(--grey-border);
-    resize: both;
+    resize: horizontal;
     overflow: auto;
     position: relative;
-
+    border-radius: var(--bd-radius-M);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
-  .example__block {
-    margin-bottom: 1.5rem;
-  }
-
-  .example__block>*:first-child {
-    margin-top: 0;
-  }
-  
-  .example__block>*:last-child {
-    margin-bottom: 0;
-  }
   
   .example_fullwidth {
     margin: 0;
@@ -810,7 +812,7 @@
     color: #fff;
   }
   
-  .example__code {
+  .example__code-src {
     color: var(--code-color);
     font-weight: 400;
     display: block;
@@ -826,6 +828,32 @@
   .example:not(:hover) .example__copycode {
     display: none;
   }
+
+.example__html-src {
+  line-height: 1.75;
+  border: 1px solid currentColor;
+  padding: .75rem .75rem 3rem;
+  border-radius: var(--bd-radius-S);
+  resize: vertical;
+  height: 30vh;
+  width: 100%;
+  font-family: monospace;
+  font-size: .9rem;
+  background-color: var(--input-bg);
+  color: currentColor;
+}
+
+.example__html {
+  position: relative;
+}
+
+.example__html-buttons {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: .5rem;
+}
 .footer {
     width: min(var(--content-width-m), 100% - 1.5rem);
     margin-inline: auto;
@@ -1086,6 +1114,52 @@
         translate: 0;
     }
 }
+.image-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider__content {
+    height: 100%;
+    overflow-x: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+.image-slider__content::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+.image-slider__item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.image-slider__left,
+.image-slider__right {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.image-slider__left {
+  left: 1.5rem;
+}
+
+.image-slider__right {
+  right: 1.5rem;
+}
+  .image-slider__left_hide,
+  .image-slider__right_hide {
+    display: none;
+    pointer-events: none;
+  }
 
 .image__img {
   display: block;
@@ -1888,7 +1962,6 @@ a.button {
   white-space: nowrap;
   cursor: pointer;
   vertical-align: middle;
-
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -1897,7 +1970,30 @@ a.button {
   user-select: none;
 }
 
-.button_small {
+.button_appearance_dark {
+  background: var(--button_appearance_dark-bg);
+  color: #fff;
+}
+
+.button_appearance_dark:hover {
+  filter: brightness(1.5);
+}
+
+
+.button_size_m {
+  --_button-size: var(--control-size-M);
+  --_icon-size: 1.5rem;
+  --_padding-inline: .75rem;
+}
+
+.button_size_l {
+  --_button-size: var(--control-size-L);
+  --_icon-size: 1.5rem;
+  --_padding-inline: .75rem;
+}
+
+.button_small,
+.button_size_s {
   --_button-size: var(--control-size-S);
   --_icon-size: 1.25rem;
   --_padding-inline: .5rem;
@@ -1914,11 +2010,13 @@ a.button {
   width: 100%;
 }
 
-.button:hover:not(.button_ghost):not(.button_action) {
+.button:hover:not(.button_ghost):not(.button_action),
+.button:hover:not(.button_ghost):not(.button_appearance_action) {
   filter: brightness(1.12) saturate(0.88);
 }
 
-.button_action:hover {
+.button_action:hover,
+.button_appearance_action:hover {
   filter: brightness(.9) saturate(1.2);
 }
 
@@ -1949,7 +2047,8 @@ a.button {
   pointer-events: none;
 }
 
-.button_action {
+.button_action,
+.button_appearance_action {
   background: var(--attractive-bg);
   color: #000;
 }

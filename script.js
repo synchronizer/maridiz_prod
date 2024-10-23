@@ -102,7 +102,7 @@ Array.from(document.querySelectorAll('.call-request')).forEach(item => {
             }
         }).catch(() => {
             window.pushNotification({
-                text: `Заявку на звонок по номеру возможно не удалось отправить`,
+                text: `Заявку на звонок возможно не удалось отправить`,
                 type: 'attention',
                 autoclose: true,
             })
@@ -111,47 +111,44 @@ Array.from(document.querySelectorAll('.call-request')).forEach(item => {
     }
 })
 Array.from(document.querySelectorAll('.carousel')).forEach(carousel => {
-    const wrapper = carousel.querySelector('.carousel__content'),
-            left = carousel.querySelector('.carousel__left'),
+    const   left = carousel.querySelector('.carousel__left'),
             right = carousel.querySelector('.carousel__right'),
             content = carousel.querySelector('.carousel__content');
 
     const checkControls = () => {
-        // console.log('checkControls()')
-    
-        // if (wrapper.scrollLeft <= 0) {
-        //     left.classList.add('carousel__left_hide')
-        // } else {
-        //     left.classList.remove('carousel__left_hide')
-        // }
+        if (content.scrollLeft <= 0) {
+            left.classList.add('carousel__left_hide')
+        } else {
+            left.classList.remove('carousel__left_hide')
+        }
 
-        // if (content.offsetWidth - wrapper.scrollLeft - carousel.offsetWidth <= 0) {
-        //     right.classList.add('carousel__right_hide')
-        // } else {
-        //     right.classList.remove('carousel__right_hide')
-        // }
+        if (content.offsetWidth + content.scrollLeft >= content.scrollWidth) {
+            right.classList.add('carousel__right_hide')
+        } else {
+            right.classList.remove('carousel__right_hide')
+        }
 
     }
 
     window.addEventListener('load', checkControls)
     
-    wrapper.addEventListener('scroll', checkControls)
+    content.addEventListener('scroll', checkControls)
 
-    // left.addEventListener('click', () => {
-    //     wrapper.scrollTo({
-    //         top: 0,
-    //         left: wrapper.scrollLeft - carousel.offsetWidth * .99,
-    //         behavior: "smooth",
-    //       });
-    // })
+    left.addEventListener('click', () => {
+        content.scrollTo({
+            top: 0,
+            left: content.scrollLeft - content.offsetWidth * .99,
+            behavior: "smooth",
+          });
+    })
 
-    // right.addEventListener('click', () => {
-    //     wrapper.scrollTo({
-    //         top: 0,
-    //         left: wrapper.scrollLeft + carousel.offsetWidth / 1.2,
-    //         behavior: "smooth",
-    //       });
-    // })
+    right.addEventListener('click', () => {
+        content.scrollTo({
+            top: 0,
+            left: content.scrollLeft + content.offsetWidth * .99,
+            behavior: "smooth",
+          });
+    })
 })
 const points = [{
     coordinates: [37.619683, 55.763483],
@@ -836,6 +833,64 @@ if (!window.localStorage.getItem('acceptCookies')) {
         },
     })
 }
+Array.from(document.querySelectorAll('.example')).forEach(example => {
+    const example__htmlSrc = example.querySelector('.example__html-src'),
+          example__block = example.querySelector('.example__block'),
+          example__htmlReset = example.querySelector('.example__html-reset');
+
+    example__htmlSrc.value = example__block.innerHTML;
+
+    const reset = example__block.innerHTML;
+
+    example__htmlSrc.addEventListener('input', () => {
+        example__block.innerHTML = example__htmlSrc.value;
+    })
+
+    example__htmlReset.addEventListener('click', () => {
+        example__block.innerHTML = reset;
+        example__htmlSrc.value = reset;
+    })
+})
+Array.from(document.querySelectorAll('.image-slider')).forEach(imageSlider => {
+    const   left = imageSlider.querySelector('.image-slider__left'),
+            right = imageSlider.querySelector('.image-slider__right'),
+            content = imageSlider.querySelector('.image-slider__content');
+
+    const checkControls = () => {
+        if (content.scrollLeft <= 0) {
+            left.classList.add('image-slider__left_hide')
+        } else {
+            left.classList.remove('image-slider__left_hide')
+        }
+
+        if (content.offsetWidth + content.scrollLeft >= content.scrollWidth - 1) {
+            right.classList.add('image-slider__right_hide')
+        } else {
+            right.classList.remove('image-slider__right_hide')
+        }
+
+    }
+
+    window.addEventListener('load', checkControls)
+    
+    content.addEventListener('scroll', checkControls)
+
+    left.addEventListener('click', () => {
+        content.scrollTo({
+            top: 0,
+            left: content.scrollLeft - content.offsetWidth,
+            // behavior: "smooth",
+          });
+    })
+
+    right.addEventListener('click', () => {
+        content.scrollTo({
+            top: 0,
+            left: content.scrollLeft + content.offsetWidth,
+            // behavior: "smooth",
+          });
+    })
+})
 
 Array.from(document.querySelectorAll('.overlay')).forEach(overlay => {
     const overlay__left = overlay.querySelector('.overlay__left'),
