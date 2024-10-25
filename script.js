@@ -1,4 +1,9 @@
 
+
+Array.from(document.querySelectorAll('[data-nofocus]')).forEach(item => {
+    item.setAttribute('tabindex', '-1')
+    item.addEventListener('focus', () => item.blur())
+})
 Array.from(document.querySelectorAll('.notifications')).forEach(notifications => {
     window.pushNotification = (options) => {
         const { text, type, autoclose, closeAction} = options;
@@ -1016,10 +1021,14 @@ Array.from(document.querySelectorAll('.slider')).forEach(slider => {
 
 
 document.addEventListener('keydown', e => {
-    
     if (e.code != 'Space' && e.code != 'Enter') return;
     if (!Array.from(document.activeElement.classList).includes('button_abstract')) return;
     document.activeElement.click()
+})
+Array.from(document.querySelectorAll('.check-button')).forEach(checkButton => {
+    checkButton.querySelector('.button').addEventListener('click', () => {
+        checkButton.classList.toggle('check-button_checked')
+    })
 })
 Array.from(document.querySelectorAll('.input')).forEach(item => {
     const input = item.querySelector('.input__input');

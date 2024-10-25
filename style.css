@@ -2,7 +2,7 @@
 :root {
     --grey-bg: light-dark(hsl(240deg 15% 94%), hsl(240deg 8% 18%));
     --black-bg: #14141A;
-    --button-bg: hsla(240, 13%, 71%, 0.4);
+    --button-bg: hsla(240, 13%, 60%, 0.3);
     --button_appearance_dark-bg: hsla(0, 0%, 0%, 0.75);
     --input-bg: hsl(240deg 13% 100% / 0.25);
     /* --button-label-color: light-dark(#000, #fff); */
@@ -807,10 +807,6 @@
     overflow: visible;
   }
   
-  .example_dark {
-    background-color: var(--black-bg);
-    color: #fff;
-  }
   
   .example__code-src {
     color: var(--code-color);
@@ -2093,6 +2089,23 @@ a.button {
   to {
     background-position: 1rem 0;
   }
+}
+.check-button {
+    position: relative;
+    isolation: isolate;
+}
+
+.check-button__check {
+    --__inset: .15rem;
+    position: absolute;
+    inset: var(--__inset);
+    background: var(--button-bg);
+    pointer-events: none;
+    border-radius: calc(var(--bd-radius-S) - var(--__inset));
+}
+
+.check-button:not(.check-button_checked) .check-button__check {
+    display: none;
 }
 
 .input {
