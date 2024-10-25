@@ -1011,6 +1011,16 @@ Array.from(document.querySelectorAll('.slider')).forEach(slider => {
     sliderPlay();
 
 })
+
+
+
+
+document.addEventListener('keydown', e => {
+    
+    if (e.code != 'Space' && e.code != 'Enter') return;
+    if (!Array.from(document.activeElement.classList).includes('button_abstract')) return;
+    document.activeElement.click()
+})
 Array.from(document.querySelectorAll('.input')).forEach(item => {
     const input = item.querySelector('.input__input');
     const clear = item.querySelector('.input__clear');
