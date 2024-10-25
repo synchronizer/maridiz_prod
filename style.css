@@ -681,9 +681,9 @@
     flex-shrink: 0;
 }
 
-.ymaps3x0--main-engine-container {
-    /* filter: brightness(0.925) saturate(0); */
-}
+/* .ymaps3x0--main-engine-container {
+    filter: brightness(0.925) saturate(0);
+} */
 
 
 
@@ -2031,7 +2031,9 @@ a.button {
   box-shadow: none;
 }
 
-.button__icon {
+.button_with-icon::before {
+  content: '';
+  display: block;
   width: var(--_icon-size);
   height: var(--_icon-size);
   background-color: currentColor;
@@ -2041,6 +2043,17 @@ a.button {
   mask-size: contain;
   margin-inline: calc(var(--_button-size) / 2 - var(--_icon-size) / 2 - var(--_padding-inline));
 }
+
+/* .button__icon {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  background-color: currentColor;
+  mask-image: var(--icon);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  margin-inline: calc(var(--_button-size) / 2 - var(--_icon-size) / 2 - var(--_padding-inline));
+} */
 
 .button[disabled] {
   opacity: .5;
