@@ -1397,6 +1397,13 @@ html {
   overflow-x: hidden;
 }
 
+.body::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: url('https://synchronizer.github.io/maridiz_prod/icons/dev-tools/build.svg');
+}
+
 :root {
   font-size: clamp(16px, 1.2vw, 20px);
 }
