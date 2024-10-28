@@ -1,7 +1,8 @@
 
 :root {
+    --page-bg: light-dark(#fff, hsl(0deg 0% 7%));
     --grey-bg: light-dark(hsl(240deg 15% 94%), hsl(240deg 8% 18%));
-    --black-bg: #14141A;
+    --black-bg: hsl(0deg 0% 14%);
     --button-bg: hsla(240, 13%, 60%, 0.3);
     --button_appearance_dark-bg: hsla(0, 0%, 0%, 0.75);
     --input-bg: hsl(240deg 13% 100% / 0.25);
@@ -12,13 +13,10 @@
     --grey-text: rgba(139, 139, 153, .7);
     --grey-border: rgba(139, 139, 153, .7);
 
-
-    --black-bg: #14141A;
-
     --backdrop: #0009;
 
-    --color-link: #05f;
-    --color-link-visited: #50f;
+    --color-link: light-dark(hsl(220deg 100% 50%), hsl(220deg 100% 75%));
+    --color-link-visited: light-dark(hsl(270deg 100% 50%), hsl(270deg 100% 75%));
 
     --code-color: #F60;
 
@@ -45,8 +43,10 @@
     --shadow: 0 1.5rem 1.5rem -.75rem #0A002688;
 
 
-    --font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;;
-    --font-family-title: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;;
+    --font-family: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    ;
+    --font-family-title: -apple-system, system-ui, "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    ;
 
     --font-size-supertitle: 3rem;
     --font-size-title: 2rem;
@@ -637,14 +637,22 @@
     --__search-elements-blur: 1rem;
     --__search-elements-bg: hsl(0 0 100% / .75);
     position: relative;
-    
 }
+
+
+.clients-map_loading .clients-map__search,
+.clients-map:not(.clients-map_loading) .clients-map__loader {
+    display: none;
+}
+
+
 
 .clients-map__map {
     aspect-ratio: 2;
+    z-index: 0;
+    background-color: var(--grey-bg); 
     border-radius: var(--bd-radius-M);
     overflow: hidden;
-    z-index: 0;
 }
 
 @media (max-aspect-ratio: 1) {
@@ -1245,6 +1253,43 @@
     -webkit-mask-image: url('https://evev.tupo.best/wp-content/uploads/2023/09/ic_round-download.svg');
   }
   
+.loader {
+    display: flex;
+    gap: .5rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader__circle {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 100%;
+    background-color: var(--button-bg);
+    animation: loader 2s infinite;
+  }
+  
+  .loader__circle:nth-child(2) {
+    animation-delay: .2s;
+  }
+  
+  .loader__circle:nth-child(3) {
+    animation-delay: .4s;
+  }
+  
+  @keyframes loader {
+    0% {
+      scale: 1;
+    }
+    25% {
+      scale: 1.3;
+    }
+    50% {
+      scale: 1;
+    }
+  }
 .main {
     --width: min(
     var(--content-width-m),
@@ -1337,6 +1382,7 @@ html:has(.overlay[open]) {
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--page-bg);
 }
 
 .body {
@@ -1966,6 +2012,30 @@ a.button {
   user-select: none;
 }
 
+.button[data-counter]:not(.button[data-counter="0"]) {
+  position: relative;
+}
+
+.button[data-counter]:not(.button[data-counter="0"])::after {
+  --__size: 1.25rem;
+  font-size: .8rem;
+  content: attr(data-counter);
+  position: absolute;
+  width: var(--__size);
+  height: var(--__size);
+  padding-top: .1rem;
+  right: -0rem;
+  bottom: -0rem;
+  border-radius: var(--__size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f02;
+  font-weight: 600;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
 .button_appearance_dark {
   background: var(--button_appearance_dark-bg);
   color: #fff;
@@ -2107,6 +2177,9 @@ a.button {
 .check-button:not(.check-button_checked) .check-button__check {
     display: none;
 }
+
+
+
 
 .input {
   position: relative;
