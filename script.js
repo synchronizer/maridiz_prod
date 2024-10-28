@@ -17,7 +17,7 @@ Array.from(document.querySelectorAll('.notifications')).forEach(notifications =>
             closeAction && closeAction()
             notifications__item.remove()
         })
-        console.log(autoclose)
+        
 
         if (autoclose) {
             setTimeout(() => {
@@ -897,62 +897,11 @@ Array.from(document.querySelectorAll('.image-slider')).forEach(imageSlider => {
           });
     })
 })
-
-Array.from(document.querySelectorAll('.overlay')).forEach(overlay => {
-    const overlay__left = overlay.querySelector('.overlay__left'),
-      overlay__right = overlay.querySelector('.overlay__right'),
-      overlay__close = overlay.querySelector('.overlay__close'),
-      overlay__content = overlay.querySelector('.overlay__content');
-
-    const controlsHideCheck = () => {
-        const {scrollLeft, scrollWidth} = overlay__content;
-        console.log(scrollWidth)
-        if (scrollLeft == 0) {
-            overlay__left.setAttribute('data-hidden', '')
-        } else {
-            overlay__left.removeAttribute('data-hidden')
-        }
-
-        if (scrollLeft > scrollWidth - overlay.offsetWidth - 1) {
-            overlay__right.setAttribute('data-hidden', '')
-        } else {
-            overlay__right.removeAttribute('data-hidden')
-        }
-    }
-    controlsHideCheck();
-
-    overlay__content.addEventListener('scroll', controlsHideCheck)
-    
-    overlay__left.addEventListener('click', () => {
-      const { scrollLeft } = overlay__content,
-        { innerWidth } = window;
-      overlay__content.scrollTo({left: scrollLeft - innerWidth});
-    //   controlsHideCheck();
+Array.from(document.querySelectorAll('[data-modal]')).forEach(modalTrigger => {
+    modalTrigger.addEventListener('click', () => {
+        document.querySelector(`#${modalTrigger.getAttribute('data-modal')}`).showModal();
     })
-
-    overlay__right.addEventListener('click', () => {
-      const { scrollLeft } = overlay__content,
-        { innerWidth } = window;
-      overlay__content.scrollTo({left: scrollLeft + innerWidth});
-    //   controlsHideCheck();
-    })
-
-    overlay__close.addEventListener('click', () => {
-      overlay.close();
-    })
-  })
-
-  Array.from(document.querySelectorAll('[data-overlay]')).forEach(overlayTrigger => {
-    overlayTrigger.addEventListener('click', () => {
-      const overlay = document.querySelector(`#${overlayTrigger.getAttribute('data-overlay')}`),
-            overlayItem = overlayTrigger.getAttribute('data-overlay-item');
-      overlay.showModal();
-
-      if (overlayItem) overlay.querySelector('.overlay__content').scrollTo({left: overlay.offsetWidth * overlayItem});
-    })
-  })
-
-
+})
 document.addEventListener('keypress', e => {
     if (e.code != 'Space' && e.code != 'Enter') return;
     document.activeElement.click();

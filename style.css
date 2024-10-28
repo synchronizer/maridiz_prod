@@ -37,9 +37,9 @@
     --control-size-M: 2.6rem;
     --control-size-L: 3.4rem;
 
-    --bd-radius-L: 1.5rem;
-    --bd-radius-M: .75rem;
-    --bd-radius-S: .4rem;
+    --bd-radius-L: 1.2rem;
+    --bd-radius-M: .7rem;
+    --bd-radius-S: .35rem;
     --shadow: 0 1.5rem 1.5rem -.75rem #0A002688;
 
 
@@ -77,7 +77,7 @@
     --content-width-l: 67.5rem;
     --content-width-xl: 92rem;
     --page-width: min(100vw);
-    --padding-inline: 1.5rem;
+    --page-padding-inline: .5rem;
 
     --margin-inline-text: .75rem;
 
@@ -383,7 +383,11 @@
     flex-direction: column-reverse;
     gap: 0.375em;
     max-height: 100vh;
-  }
+}
+
+.notifications:empty {
+    display: none;
+}
 
 .notifications__item {
     --__background-color: var(--black-bg);
@@ -412,10 +416,12 @@
         translate: var(--__width);
         display: flex;
     }
+
     99% {
         translate: 0;
         display: flex;
     }
+
     100% {
         display: none;
     }
@@ -425,6 +431,7 @@
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -437,18 +444,20 @@
 }
 
 
-.notifications__item_success .notifications__item-icon{
+.notifications__item_success .notifications__item-icon {
     background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-success.svg);
 }
-.notifications__item_attention .notifications__item-icon{
+
+.notifications__item_attention .notifications__item-icon {
     background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-attention.svg);
 }
-.notifications__item_error .notifications__item-icon{
+
+.notifications__item_error .notifications__item-icon {
     background-image: url(https://synchronizer.github.io/maridiz_prod/icons/notify-error.svg);
 }
 
 .notifications__item-icon {
-    height: var(--control-size-S);   
+    height: var(--control-size-S);
     aspect-ratio: 1;
     border-radius: var(--bd-radius-S);
     background-repeat: no-repeat;
@@ -1293,87 +1302,32 @@
 .main {
     --width: min(
     var(--content-width-m),
-    calc(100% - 1rem)
+    calc(100% - (var(--page-padding-inline) * 2))
   );
   width: var(--width);
   margin-inline: auto;
 }
-.overlay {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    background: transparent;
-    border: none;
+.modal {
+    --width: min(
+    var(--content-width-m),
+    calc(100% - (var(--page-padding-inline) * 2))
+  );
+  width: var(--width);
+  margin-inline: auto;
+  margin-top: 50vh;
+  translate: 0 -50%;
+  padding: 1.5rem;
+  border: none;
+  border-radius: var(--bd-radius-L);
+  background: light-dark(var(--page-bg), var(--black-bg));
 }
 
-
-
-.overlay::backdrop {
-    background: var(--backdrop);
-}
-
-.overlay__item {
-    max-height: 100%;
-    flex: 0 0 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: .75rem;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    scroll-snap-align: start;
-    overflow-y: scroll;
-}
-
-.overlay__content {
-    display: flex;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    scroll-snap-type: x mandatory;
-    position: absolute;
-    inset: 0;
-    align-items: center;
-}
-
-.overlay__left,
-.overlay__right,
-.overlay__close {
-    position: fixed;
-    z-index: 1;
-    width: 3rem;
-    height: 3rem;
-}
-
-
-
-.overlay__left {
-    left: .5rem;
-    top: 50%;
-    translate: 0 -50%;
-}
-
-.overlay__right {
-    right: .5rem;
-    top: 50%;
-    translate: 0 -50%;
-}
-
-.overlay__left[data-hidden],
-.overlay__right[data-hidden] {
-    display: none;
-}
-
-.overlay__close {
-    right: .5rem;
-    top: .5rem;
-}
-
-
-html:has(.overlay[open]) {
+.body:has(.modal[open]) {
     overflow: hidden;
+}
+
+.modal::backdrop {
+    background-color: var(--backdrop);
 }
 * {
   box-sizing: border-box;
@@ -1397,12 +1351,6 @@ html {
   overflow-x: hidden;
 }
 
-.body::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: url('https://synchronizer.github.io/maridiz_prod/icons/dev-tools/build.svg');
-}
 
 :root {
   font-size: clamp(16px, 1.2vw, 20px);
@@ -2206,9 +2154,9 @@ a.button {
 .input__label {
   position: absolute;
   left: calc(var(--control-size-L) * .2);
-  top: .4em;
+  top: .1em;
   font-size: .8rem;
-  opacity: 0.5;
+  /* opacity: 0.5; */
 }
 
 .input__clear {
@@ -2282,9 +2230,8 @@ a.button {
 .textarea__label {
   position: absolute;
   left: calc(var(--control-size-L) * .2);
-  top: .4em;
+  top: .1em;
   font-size: .8rem;
-  opacity: 0.5;
 }
 
 .textarea__label_hidden {

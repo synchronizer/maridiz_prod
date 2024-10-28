@@ -34,6 +34,7 @@
             <li class="list__item" ><a class="link" href="#notifications">Notifications</a></li>
             <li class="list__item" ><a class="link" href="#call-request">Call-request</a></li>
             <li class="list__item" ><a class="link" href="#image-slider">Image-slider</a></li>
+            <li class="list__item" ><a class="link" href="#modal">Modal</a></li>
         </ol>
         <h2 class="title"  id="banner">Banner</h2>    <div class="wide">            <div class="example ">
                 <div class="example__block">        <div class="banner banner_content-width_l rounded-m" style="background-image: linear-gradient(90deg, rgba(217, 237, 0, 0.20) 1.82%, rgba(151, 255, 4, 0.60) 99.9%), radial-gradient(100% 100% at 50% 0%, #D300CC 0%, #0D096C 100%)" >
@@ -743,6 +744,38 @@
                     &lt;Button whitelabel&gt;Заказать&lt;/Button&gt;
                 &lt;/Plan__controls&gt;
             &lt;/Plan&gt;
+        </code>
+                </div>
+                <div class="example__html">
+                    <textarea class="example__html-src"></textarea>
+                    <div class="example__html-buttons">
+                        <div class="example__html-reset">    <button  class="button button_appearance_default button_size_m button_small rounded-s"     >Reset</button>
+                        </div>
+                        <div class="example__html-copy">    <button  class="button button_appearance_default button_size_m button_small rounded-s"    disabled  >Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>        <h2 class="title"  id="modal">Modal</h2>
+        <div class="example ">
+                <div class="example__block">    <button  class="button button_appearance_default button_size_m rounded-s"   data-modal="test-modal"   >Test modal</button><dialog class="modal modal_card" id="test-modal">        <form method="dialog" class="call-request" >
+                <h3 class="call-request__title">Заявка на обратный звонок</h3>    <div class="input">
+    <input type="text" value="" class="input__input rounded-s"   name="name">
+  <label  class="input__label" >Имя:</label></div>    <div class="input">
+    <input type="tel" value="" class="input__input rounded-s"   name="phone">
+  <label  class="input__label" >Номер телефона:</label></div>    <div class="input">
+    <input type="email" value="" class="input__input rounded-s"   name="email">
+  <label  class="input__label" >E-mail:</label></div>    <div class="textarea">
+      <textarea rows="5"  class="textarea__textarea rounded-s"    name="comment"></textarea>
+  <label  class="textarea__label" >Комментарий:</label></div>
+              <div class="call-request__send">    <button  class="button button_appearance_default button_size_m rounded-s"   name="send"   >Отправить</button>
+            </div>
+        </form></dialog>        </div>
+                <div class="example__code">
+                    <code class="example__code-src">
+            &lt;Button dom-data-modal="test-modal"&gt;Test modal&lt;/Button&gt;
+            &lt;Modal id="test-modal"&gt;
+               &lt;Call-request&gt;&lt;/Call-request&gt;
+            &lt;/Modal&gt;
         </code>
                 </div>
                 <div class="example__html">
