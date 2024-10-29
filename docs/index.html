@@ -757,7 +757,10 @@
                 </div>
             </div>        <h2 class="title"  id="modal">Modal</h2>
         <div class="example ">
-                <div class="example__block">    <button  class="button button_appearance_default button_size_m rounded-s"   data-modal="test-modal"   >Test modal</button><dialog class="modal modal_card" id="test-modal">        <form method="dialog" class="call-request" >
+                <div class="example__block">    <button  class="button button_appearance_default button_size_m rounded-s"   data-modal="test-modal"   >Test modal</button><dialog class="modal modal_card" id="test-modal">
+    <div class="modal__scroller">
+        <div class="modal__content-wrapper">
+        <div class="modal__content rounded-l">        <form method="dialog" class="call-request" >
                 <h3 class="call-request__title">Заявка на обратный звонок</h3>    <div class="input">
     <input type="text" value="" class="input__input rounded-s"   name="name">
   <label  class="input__label" >Имя:</label></div>    <div class="input">
@@ -769,12 +772,53 @@
   <label  class="textarea__label" >Комментарий:</label></div>
               <div class="call-request__send">    <button  class="button button_appearance_default button_size_m rounded-s"   name="send"   >Отправить</button>
             </div>
-        </form></dialog>        </div>
+        </form>        </div>
+        </div>
+    </div>
+    <div class="modal__close">    <button  class="button button_appearance_default button_size_m button_ghost button_small button_with-icon rounded-s"     style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/cross.svg')" ></button>
+    </div>
+</dialog>    <button  class="button button_appearance_default button_size_m rounded-s"   data-modal="test-modal-2"   >Test modal 2</button><dialog class="modal modal_card" id="test-modal-2">
+    <div class="modal__scroller">
+        <div class="modal__content-wrapper">
+        <div class="modal__content rounded-l">        <form method="dialog" class="call-request" >
+                <h3 class="call-request__title">Заявка на обратный звонок</h3>    <div class="input">
+    <input type="text" value="" class="input__input rounded-s"   name="name">
+  <label  class="input__label" >Имя:</label></div>    <div class="input">
+    <input type="tel" value="" class="input__input rounded-s"   name="phone">
+  <label  class="input__label" >Номер телефона:</label></div>    <div class="input">
+    <input type="email" value="" class="input__input rounded-s"   name="email">
+  <label  class="input__label" >E-mail:</label></div>    <div class="textarea">
+      <textarea rows="5"  class="textarea__textarea rounded-s"    name="comment"></textarea>
+  <label  class="textarea__label" >Комментарий:</label></div>
+              <div class="call-request__send">    <button  class="button button_appearance_default button_size_m rounded-s"   name="send"   >Отправить</button>
+            </div>
+        </form>                <p class="text" >
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus numquam animi rem quasi. Quam, nisi! Quas saepe sunt officia nemo optio molestias vitae magni minima explicabo, dolores voluptatum totam rerum obcaecati dolore accusantium, numquam harum, labore enim non ea at dicta natus porro. Ducimus labore repudiandae sint rerum aliquam, quae commodi nemo facilis, iusto cupiditate eius porro assumenda sed temporibus autem voluptatem ut dolore nobis? Ad dolorem magni distinctio quam expedita molestias, doloribus maiores consequatur cum quidem eaque natus dignissimos, voluptate excepturi nobis. Labore tempora ducimus est mollitia reprehenderit error magni eum totam delectus similique, aspernatur voluptatum quibusdam magnam reiciendis, unde esse ea sed cumque nostrum modi veritatis quod. Quo accusantium incidunt delectus debitis. Quas illum eveniet veritatis reiciendis voluptas soluta praesentium ipsa rerum quod exercitationem voluptatum rem, quae officia aliquam. At labore doloremque recusandae explicabo expedita dicta voluptatibus maiores nesciunt sed, cumque voluptatum nemo id, atque vero suscipit. Placeat.
+                </p>
+                <p class="text" >
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nulla excepturi, ipsum quae laboriosam aperiam quisquam recusandae. Ipsa vitae quasi possimus repellendus, dolor suscipit unde enim dicta, totam hic at voluptate dolorum ut ratione! Recusandae deserunt rerum libero officia nobis quidem totam repellendus unde quod ut dicta sint facilis doloremque maiores laboriosam reiciendis, officiis distinctio? Perferendis totam commodi laudantium voluptatum corporis dolores mollitia culpa rerum cum, illum incidunt error officia eaque maiores asperiores alias recusandae itaque porro optio. Quaerat, necessitatibus dolorem quibusdam et voluptatem, libero error animi dolor aperiam vel vero, ullam impedit voluptates blanditiis doloribus corrupti. Consequuntur, autem nesciunt animi incidunt inventore ipsam ullam. Reiciendis illum nam modi harum quis hic! Explicabo, aliquam maiores debitis harum delectus voluptates veritatis corrupti odit. Molestias vel fugiat voluptatum atque eligendi qui eaque, accusantium praesentium. Reprehenderit nulla atque explicabo accusamus dicta nam eligendi doloribus excepturi iusto maiores. Animi quidem nobis labore, veniam omnis repellendus fugiat aliquam sed doloremque voluptate? Accusamus veritatis eaque optio atque ipsam molestiae odio ullam consequatur tempore nemo eum autem quidem quae culpa asperiores cumque quod voluptates, nulla, at deserunt incidunt repellat? Reprehenderit maiores eligendi magnam quis fugiat doloremque. Sit, quia accusamus deleniti voluptatibus cumque cum autem excepturi eius quidem.
+                </p>        </div>
+        </div>
+    </div>
+    <div class="modal__close">    <button  class="button button_appearance_default button_size_m button_ghost button_small button_with-icon rounded-s"     style="--icon: url('https://synchronizer.github.io/maridiz_prod/icons/cross.svg')" ></button>
+    </div>
+</dialog>        </div>
                 <div class="example__code">
                     <code class="example__code-src">
             &lt;Button dom-data-modal="test-modal"&gt;Test modal&lt;/Button&gt;
             &lt;Modal id="test-modal"&gt;
                &lt;Call-request&gt;&lt;/Call-request&gt;
+            &lt;/Modal&gt;
+
+            &lt;Button dom-data-modal="test-modal-2"&gt;Test modal 2&lt;/Button&gt;
+            &lt;Modal id="test-modal-2"&gt;
+                &lt;Call-request&gt;&lt;/Call-request&gt;
+                &lt;Text&gt;
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus numquam animi rem quasi. Quam, nisi! Quas saepe sunt officia nemo optio molestias vitae magni minima explicabo, dolores voluptatum totam rerum obcaecati dolore accusantium, numquam harum, labore enim non ea at dicta natus porro. Ducimus labore repudiandae sint rerum aliquam, quae commodi nemo facilis, iusto cupiditate eius porro assumenda sed temporibus autem voluptatem ut dolore nobis? Ad dolorem magni distinctio quam expedita molestias, doloribus maiores consequatur cum quidem eaque natus dignissimos, voluptate excepturi nobis. Labore tempora ducimus est mollitia reprehenderit error magni eum totam delectus similique, aspernatur voluptatum quibusdam magnam reiciendis, unde esse ea sed cumque nostrum modi veritatis quod. Quo accusantium incidunt delectus debitis. Quas illum eveniet veritatis reiciendis voluptas soluta praesentium ipsa rerum quod exercitationem voluptatum rem, quae officia aliquam. At labore doloremque recusandae explicabo expedita dicta voluptatibus maiores nesciunt sed, cumque voluptatum nemo id, atque vero suscipit. Placeat.
+                &lt;/Text&gt;
+                &lt;Text&gt;
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nulla excepturi, ipsum quae laboriosam aperiam quisquam recusandae. Ipsa vitae quasi possimus repellendus, dolor suscipit unde enim dicta, totam hic at voluptate dolorum ut ratione! Recusandae deserunt rerum libero officia nobis quidem totam repellendus unde quod ut dicta sint facilis doloremque maiores laboriosam reiciendis, officiis distinctio? Perferendis totam commodi laudantium voluptatum corporis dolores mollitia culpa rerum cum, illum incidunt error officia eaque maiores asperiores alias recusandae itaque porro optio. Quaerat, necessitatibus dolorem quibusdam et voluptatem, libero error animi dolor aperiam vel vero, ullam impedit voluptates blanditiis doloribus corrupti. Consequuntur, autem nesciunt animi incidunt inventore ipsam ullam. Reiciendis illum nam modi harum quis hic! Explicabo, aliquam maiores debitis harum delectus voluptates veritatis corrupti odit. Molestias vel fugiat voluptatum atque eligendi qui eaque, accusantium praesentium. Reprehenderit nulla atque explicabo accusamus dicta nam eligendi doloribus excepturi iusto maiores. Animi quidem nobis labore, veniam omnis repellendus fugiat aliquam sed doloremque voluptate? Accusamus veritatis eaque optio atque ipsam molestiae odio ullam consequatur tempore nemo eum autem quidem quae culpa asperiores cumque quod voluptates, nulla, at deserunt incidunt repellat? Reprehenderit maiores eligendi magnam quis fugiat doloremque. Sit, quia accusamus deleniti voluptatibus cumque cum autem excepturi eius quidem.
+                &lt;/Text&gt;
             &lt;/Modal&gt;
         </code>
                 </div>

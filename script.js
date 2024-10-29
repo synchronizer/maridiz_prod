@@ -902,6 +902,20 @@ Array.from(document.querySelectorAll('[data-modal]')).forEach(modalTrigger => {
         document.querySelector(`#${modalTrigger.getAttribute('data-modal')}`).showModal();
     })
 })
+
+Array.from(document.querySelectorAll('.modal')).forEach(modal => {
+    const   modal__close = modal.querySelector('.modal__close'),
+            modal__scroller = modal.querySelector('.modal__scroller'),
+            modal__content = modal.querySelector('.modal__content');
+
+    modal__close.addEventListener('click', () => {modal.close()})
+    modal__scroller.addEventListener('click', () => {modal.close()})
+
+    modal__content.addEventListener('click', e => {
+        e.stopPropagation();
+    })
+
+})
 document.addEventListener('keypress', e => {
     if (e.code != 'Space' && e.code != 'Enter') return;
     document.activeElement.click();
@@ -970,11 +984,11 @@ Array.from(document.querySelectorAll('.slider')).forEach(slider => {
 
 
 
-document.addEventListener('keydown', e => {
-    if (e.code != 'Space' && e.code != 'Enter') return;
-    if (!Array.from(document.activeElement.classList).includes('button_abstract')) return;
-    document.activeElement.click()
-})
+// document.addEventListener('keydown', e => {
+//     if (e.code != 'Space' && e.code != 'Enter') return;
+//     if (!Array.from(document.activeElement.classList).includes('button_abstract')) return;
+//     document.activeElement.click()
+// })
 Array.from(document.querySelectorAll('.check-button')).forEach(checkButton => {
     checkButton.addEventListener('click', () => {
         checkButton.classList.toggle('check-button_checked')

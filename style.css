@@ -10,7 +10,7 @@
     --light-text-color: hsl(240deg 5% 40% / 80%);
     --border-color: hsl(240deg 5% 50% / 70%);
 
-    --grey-text: rgba(139, 139, 153, .7);
+    --grey-text: hsl(0deg 0% 52% / 90%);
     --grey-border: rgba(139, 139, 153, .7);
 
     --backdrop: #0009;
@@ -79,7 +79,7 @@
     --page-width: min(100vw);
     --page-padding-inline: .5rem;
 
-    --margin-inline-text: .75rem;
+    --margin-inline-text: .5rem;
 
     --card-width-m: 22rem;
     --card-width-l: 33rem;
@@ -1300,26 +1300,48 @@
     }
   }
 .main {
-    --width: min(
+  width: min(
     var(--content-width-m),
     calc(100% - (var(--page-padding-inline) * 2))
   );
-  width: var(--width);
   margin-inline: auto;
 }
 .modal {
-    --width: min(
-    var(--content-width-m),
-    calc(100% - (var(--page-padding-inline) * 2))
-  );
-  width: var(--width);
-  margin-inline: auto;
-  margin-top: 50vh;
-  translate: 0 -50%;
-  padding: 1.5rem;
-  border: none;
-  border-radius: var(--bd-radius-L);
-  background: light-dark(var(--page-bg), var(--black-bg));
+    border: none;
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+}
+
+.modal__scroller {
+    overflow-y: auto;
+    position: fixed;
+    inset: 0;
+    padding-top: calc(var(--control-size-S) + 1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal__content-wrapper {
+    max-height: 100%;
+    width: min(100% - var(--page-padding-inline) * 2, var(--content-width-m));
+}
+
+.modal__content-wrapper::after {
+    content: '';
+    display: block;
+    height: calc(var(--control-size-S) + 1.5rem);
+  }
+
+.modal__content {
+    padding: 1.5rem;
+    background: light-dark(var(--page-bg), var(--black-bg));
+    cursor: auto;
 }
 
 .body:has(.modal[open]) {
@@ -1328,6 +1350,13 @@
 
 .modal::backdrop {
     background-color: var(--backdrop);
+}
+
+.modal__close {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    color: #fff;
 }
 * {
   box-sizing: border-box;
@@ -2046,7 +2075,7 @@ a.button {
   transform: scale(.97);
 }
 
-.button_ghost:not(:hover):not(:focus),
+.button_ghost:not(:hover):not(:focus-visible),
 .button_ghost[disabled] {
   background-color: transparent;
   box-shadow: none;
